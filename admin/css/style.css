@@ -1,0 +1,11 @@
+/* Fix Close Button in RTL */
+html[dir="rtl"] .select2-search-choice-close{
+    left: 30px!important;
+}
+.edit_bread_crumbs .acf-editor-wrap iframe{
+    height: 100px!important;
+    min-height: 100px!important;
+}
+.mce-menubtn.mce-fixed-width span{
+    text-align: right;   
+}
