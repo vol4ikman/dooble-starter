@@ -1,16 +1,21 @@
 /******************************************************
 ****** Dep
 ******************************************************/
-var gulp         = require('gulp');
-var uglify       = require('gulp-uglify');
-var rename       = require('gulp-rename');
-var cleanCSS     = require('gulp-clean-css');
-var autoprefixer = require('gulp-autoprefixer');
-var concat       = require('gulp-concat');
-var notify       = require("gulp-notify");
+var gulp         = require('gulp'),
+    uglify       = require('gulp-uglify'),
+    rename       = require('gulp-rename'),
+    cleanCSS     = require('gulp-clean-css'),
+    autoprefixer = require('gulp-autoprefixer'),
+    concat       = require('gulp-concat'),
+    notify       = require("gulp-notify");
+
+gulp.task('production', ['js','css'], function(){
+    console.log("Gulp js & css executed");
+});
 
 gulp.task('default', function(){
-    console.log("Gulp starting");
+    console.log("Gulp started");
+    console.log("Gulp is running: '"+this.isRunning+"'");
 });
 
 /******************************************************
