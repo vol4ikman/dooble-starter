@@ -54,6 +54,9 @@ if ( ! function_exists( 'add_body_class' ) ){
         if (defined('LANG')){
             $classes[] = 'lang-'.LANG;
         }
+        if (defined('ENV')){
+            $classes[] = 'env-'.ENV;
+        }	    
         return $classes;
     }
     add_filter( 'body_class','add_body_class' );
