@@ -10,9 +10,11 @@ function qs_theme_styles(){
     if(ENV == 'dev'){
         wp_register_style('main-style', THEME . '/build/css/main-style.css', array(), NULL, 'all'); wp_enqueue_style('main-style');
         wp_register_style('responsive', THEME . '/build/css/responsive.css', array(), NULL, 'all'); wp_enqueue_style('responsive');
+	wp_register_style('main-style-rtl', THEME . '/build/css/main-style-rtl.css', array(), NULL, 'all'); wp_enqueue_style('main-style-rtl');
     } else {
         wp_register_style('main-style', THEME . '/build/css/main-style.min.css', array(), NULL, 'all'); wp_enqueue_style('main-style');
         wp_register_style('responsive', THEME . '/build/css/responsive.min.css', array(), NULL, 'all'); wp_enqueue_style('responsive');
+	wp_register_style('main-style-rtl', THEME . '/build/css/main-style-rtl.min.css', array(), NULL, 'all'); wp_enqueue_style('main-style-rtl');
     }
 }
 add_action('wp_enqueue_scripts', 'qs_theme_styles');
