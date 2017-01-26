@@ -2,14 +2,26 @@
 
 $black: #000;
 $white: #FFF;
+$link_color : #000;
+$link_hover : #ccc;
 
-body {
-    color: $black;
-    background: $white;
-    a {
-        color: blue;
-        &:hover {
-            color: green;
-        }
-    }
+@mixin border-radius($radius) {
+  -webkit-border-radius: $radius;
+     -moz-border-radius: $radius;
+      -ms-border-radius: $radius;
+          border-radius: $radius;
+}
+@mixin trans($ms) {
+    -webkit-transition: all $ms ease;
+    -moz-transition: all $ms ease;
+    -ms-transition: all $ms ease;
+    -o-transition: all $ms ease;
+    transition: all $ms ease;
+}
+@mixin scale($size) {
+    -moz-transform: scale($size);
+    -webkit-transform: scale($size);
+    -o-transform: scale($size);
+    -ms-transform: scale($size);
+    transform: scale($size);
 }
