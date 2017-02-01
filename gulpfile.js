@@ -45,7 +45,7 @@ gulp.task('ajax-js', function() {
     .pipe(rename('ajax.min.js'))                     // rename it
     .pipe(uglify())                                  // minify js
     .pipe(gulp.dest('./build/js/'))                  // move it again to build/js/ directory
-    .pipe(notify("Main script was minified"));       // notify message
+    .pipe(notify("Ajax script was minified"));       // notify message
 });
 
 gulp.task('main-js', function() {
