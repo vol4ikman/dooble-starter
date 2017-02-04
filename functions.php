@@ -2,23 +2,23 @@
 /*****************************************
 **  Define
 *****************************************/
-    if( !defined('THEME') )
-        define("THEME", get_template_directory_uri());
-    //if wpml
-    // define("LANG",ICL_LANGUAGE_CODE);
-    define("LANG", "he");
-    if(is_rtl()){
-        define("FLOAT", 'right');
-        define("FOUNDATION", THEME.'/assets/foundation-6.2.1-rtl');
-    }
-    else{
-        define("FLOAT", 'left');
-        define("FOUNDATION", THEME.'/assets/foundation-6.2.1-ltr');
-    }
-
-    if( !defined('TEMPLATEPATH') )
-    	define( 'TEMPLATEPATH', get_template_directory() );
-
+if( !defined('THEME') ){
+	define("THEME", get_template_directory_uri());
+} 
+//if wpml
+// define("LANG",ICL_LANGUAGE_CODE);
+define("LANG", "he");
+if(is_rtl()){
+	define("FLOAT", 'right');
+	define("FOUNDATION", THEME.'/assets/foundation-6.2.1-rtl');
+}
+else{
+	define("FLOAT", 'left');
+	define("FOUNDATION", THEME.'/assets/foundation-6.2.1-ltr');
+}
+if( !defined('TEMPLATEPATH') ) {
+	define( 'TEMPLATEPATH', get_template_directory() );    
+}   	
 /*****************************************
 **  Languages
 *****************************************/
@@ -26,7 +26,6 @@ add_action('after_setup_theme', 'qstheme_textdomain');
 function qstheme_textdomain(){
     load_theme_textdomain('qstheme', THEME . '/languages');
 }
-
 /*****************************************
 **  Includes
 ****************************************/
@@ -36,14 +35,12 @@ get_template_part("functions/hooks");
 get_template_part("functions/functions");
 get_template_part("functions/front-ajax");
 get_template_part("functions/helpers");
-
 /*****************************************
 **  Global
 *****************************************/
 if (!isset($content_width)) {
     $content_width = 1024;
 }
-
 if (function_exists('add_theme_support')){
     // Add Menu Support
     add_theme_support('menus');
@@ -52,11 +49,9 @@ if (function_exists('add_theme_support')){
     add_image_size('large', 800, '', true); // Large Thumbnail
     add_image_size('medium', 250, '', true); // Medium Thumbnail
     add_image_size('small', 120, '', true); // Small Thumbnail
-
     // Enables post and comment RSS feed links to head
     add_theme_support('automatic-feed-links');
 }
-
 /**********************
     ACF Google API
 **********************/
