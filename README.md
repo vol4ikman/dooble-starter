@@ -3,6 +3,8 @@
 ### Requirements
 1. Node JS - <a href="https://nodejs.org/en/" target="_blank">Get NodeJS</a>
 2. Gulp JS - <a href="http://gulpjs.com/" target="_blank">Get GulpJS</a>
+3. Gulp must be installed globally on your system:<br>
+`npm install gulp -g`
 3. Run this command from the root of your WordPress theme: <br>
 `npm install gulp gulp-uglify gulp-rename gulp-clean-css gulp-autoprefixer gulp-concat gulp-notify`
 
