@@ -46,9 +46,9 @@ if (function_exists('add_theme_support')){
     add_theme_support('menus');
     // Add Thumbnail Theme Support
     add_theme_support('post-thumbnails');
-    add_image_size('large', 800, '', true); // Large Thumbnail
-    add_image_size('medium', 250, '', true); // Medium Thumbnail
-    add_image_size('small', 120, '', true); // Small Thumbnail
+    add_image_size('large', 1000, '', true);
+    add_image_size('medium', 450, '', true);
+    add_image_size('small', 250, '', true);
     // Enables post and comment RSS feed links to head
     add_theme_support('automatic-feed-links');
 }
@@ -60,6 +60,6 @@ function get_google_api_key(){
     return $google_api_key;
 }
 function google_api_acf_init() {
-	acf_update_setting('google_api_key', get_google_api_key());
+acf_update_setting('google_api_key', get_google_api_key());
 }
 add_action('acf/init', 'google_api_acf_init');
