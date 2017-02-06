@@ -56,6 +56,11 @@ function gulp_starter_register_required_plugins() {
 			'required' => false,
 		),
 		array(
+			'name'	   => 'Yoast SEO',
+			'slug'	   => 'wordpress-seo',
+			'required' => false,
+		),		
+		array(
 			'name'	   => 'Contact Form 7',
 			'slug'	   => 'contact-form-7',
 			'required' => true,
