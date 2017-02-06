@@ -35,6 +35,7 @@ get_template_part("functions/hooks");
 get_template_part("functions/functions");
 get_template_part("functions/front-ajax");
 get_template_part("functions/helpers");
+get_template_part("functions/tgm");
 /*****************************************
 **  Global
 *****************************************/
