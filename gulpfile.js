@@ -1,6 +1,3 @@
-/******************************************************
-****** Dep
-******************************************************/
 var gulp         = require('gulp'),
     uglify       = require('gulp-uglify'),
     rename       = require('gulp-rename'),
@@ -9,25 +6,20 @@ var gulp         = require('gulp'),
     concat       = require('gulp-concat'),
     notify       = require("gulp-notify");
 
-gulp.task('production', ['js','css','main-js','ajax-js','main-css','responsive-css'], function(){
-    //main-css-rtl
-    console.log("Production executed!!!");
-});
-
 gulp.task('default', function(){
-    console.log("Gulp started");
-    console.log("Gulp is running: '"+this.isRunning+"'");
-    console.log("Yuval looser");
+    console.log("Gulp default started");
 });
 
-/******************************************************
-****** Include JS libraries HERE
-******************************************************/
+/*************************
+******  Development ******
+**************************/
+
 var source_scripts = [
     './assets/foundation-6.2.1-ltr/js/vendor/foundation.min.js',
     './assets/js/device.min.js',
     './assets/js/magnific.js',
     './assets/js/slick.min.js',
+    './assets/js/ajax.js',
 ];
 
 gulp.task('js', function() {
@@ -40,27 +32,9 @@ gulp.task('js', function() {
     .pipe(notify("Scripts compliled + minified"));      // notify message
 });
 
-gulp.task('ajax-js', function() {
-  return gulp.src('./build/js/ajax.js')              // move it to build/js/ directory
-    .pipe(rename('ajax.min.js'))                     // rename it
-    .pipe(uglify())                                  // minify js
-    .pipe(gulp.dest('./build/js/'))                  // move it again to build/js/ directory
-    .pipe(notify("Ajax script was minified"));       // notify message
-});
-
-gulp.task('main-js', function() {
-  return gulp.src('./build/js/scripts.js')              // move it to build/js/ directory
-    .pipe(rename('scripts.min.js'))                      // rename it
-    .pipe(uglify())                                     // minify js
-    .pipe(gulp.dest('./build/js/'))                     // move it again to build/js/ directory
-    .pipe(notify("Main script was minified"));      // notify message
-});
-
-/******************************************************
-****** Include CSS libraries HERE
-******************************************************/
 var source_styles = [
     './assets/css/normalize.css',
+    './assets/foundation-6.2.1-ltr/css/foundation.min.css',    
     './assets/css/animate.css',
     './assets/css/magnific.css',
     './assets/css/slick.css'
@@ -80,40 +54,41 @@ gulp.task('css', function() {
     .pipe(notify("Styles compliled + minified"));       // notify message
 });
 
-gulp.task('main-css', function() {
-    return gulp.src('./build/css/main-style.css')       // move it to build/css/ directory
-    .pipe(rename('main-style.min.css'))                 // rename it
-    .pipe(cleanCSS())                                   // minify css
-    .pipe(autoprefixer({
-        browsers: ['last 2 versions'],
-        cascade: false
-    }))
-    .pipe(gulp.dest('./build/css/'))                    // move it again to build/clean/ directory
-    .pipe(notify("Main style compliled + minified"));   // notify message
+/*************************
+******  Production  ******
+**************************/
+
+var production_scripts = [
+    './build/js/assets.min.js',
+    './build/js/scripts.js'
+];
+
+gulp.task('production-js', function() {
+  return gulp.src(production_scripts)            // move it to build/js/ directory
+    .pipe(rename('production.min.js'))           // rename it
+    .pipe(uglify())                              // minify js
+    .pipe(gulp.dest('./build/js/'))              // move it to build/js/ directory
+    .pipe(notify("Production script done"));     // notify message
 });
 
-/*
-gulp.task('main-css-rtl', function() {
-    return gulp.src('./build/css/main-style-rtl.css')                        // move it to build/css/ directory
-    .pipe(rename('main-style-rtl.min.css'))                 // rename it
-    .pipe(cleanCSS())                                   // minify css
-    .pipe(autoprefixer({
-        browsers: ['last 2 versions'],
-        cascade: false
-    }))
-    .pipe(gulp.dest('./build/css/'))                    // move it again to build/clean/ directory
-    .pipe(notify("Main style compliled + minified"));   // notify message
-});
-*/
+var production_styles = [
+    './build/css/assets.min.css',
+    './build/css/main-style.css',
+    './build/css/responsive.css',
+];
 
-gulp.task('responsive-css', function() {
-  return gulp.src('./build/css/responsive.css')         // move it to build/css/ directory
-    .pipe(rename('responsive.min.css'))                 // rename it
-    .pipe(cleanCSS())                                   // minify css
+gulp.task('production-css', function() {
+    return gulp.src(production_styles)        // move it to build/css/ directory
+    .pipe(rename('production.min.css'))       // rename it
+    .pipe(cleanCSS())                         // minify css
     .pipe(autoprefixer({
         browsers: ['last 2 versions'],
         cascade: false
     }))
-    .pipe(gulp.dest('./build/css/'))                    // move it again to build/clean/ directory
-    .pipe(notify("responsive style was minified"));     // notify message
+    .pipe(gulp.dest('./build/css/'))          // move it again to build/clean/ directory
+    .pipe(notify("Production style done"));   // notify message
+});
+
+gulp.task('production', ['production-js','production-css'], function(){
+    console.log("Production executed!!!");
 });
