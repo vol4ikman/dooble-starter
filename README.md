@@ -19,4 +19,14 @@
 ** Atom text editor <a href="https://atom.io/" target="_blank">(download here)</a> is very recommended =)
 If using atom, DO NOT forget setup "watcher" =)
 
+### Default Watchers
+`
+      "public_html/wp-content/themes/gulp-starter/build/css/main-style.css",
+      "public_html/wp-content/themes/gulp-starter/build/js/assets.min.js",
+      "public_html/wp-content/themes/gulp-starter/build/js/scripts.js",
+      "public_html/wp-content/themes/gulp-starter/build/css/assets.min.css",
+      "public_html/wp-content/themes/gulp-starter/build/css/production.min.css",
+      "public_html/wp-content/themes/gulp-starter/build/js/production.min.js"
+`
+
 ## Good Luck!
