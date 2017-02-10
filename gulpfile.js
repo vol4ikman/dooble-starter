@@ -55,7 +55,7 @@ gulp.task('css', ['js'], function() {
 });
 
 gulp.task('dev', ['css'], function(){
-    console.log("Production executed!!!");
+    console.log("Development scripts & styles compiled!!!");
 });
 
 /*************************
