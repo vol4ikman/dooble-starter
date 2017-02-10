@@ -20,13 +20,13 @@
 If using atom, DO NOT forget setup "watcher" =)
 
 ### Default Watchers
-`html
+```html
 "public_html/wp-content/themes/gulp-starter/build/css/main-style.css",<br>
 "public_html/wp-content/themes/gulp-starter/build/js/assets.min.js",<br>
 "public_html/wp-content/themes/gulp-starter/build/js/scripts.js",<br>
 "public_html/wp-content/themes/gulp-starter/build/css/assets.min.css",<br>
 "public_html/wp-content/themes/gulp-starter/build/css/production.min.css",<br>
 "public_html/wp-content/themes/gulp-starter/build/js/production.min.js"
-`
+```
 
 ## Good Luck!
