@@ -89,6 +89,7 @@ gulp.task('production-css',['production-js'], function() {
         browsers: ['last 2 versions'],
         cascade: false
     }))
+    .pipe(concat('production.min.css'))
     .pipe(gulp.dest('./build/css/'))          // move it again to build/clean/ directory
     .pipe(notify("Production style done"));   // notify message
 });
