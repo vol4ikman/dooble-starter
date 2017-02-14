@@ -1,3 +1,6 @@
+// Run this command first:
+// npm install gulp gulp-uglify gulp-rename gulp-clean-css gulp-autoprefixer gulp-concat gulp-notify
+
 var gulp         = require('gulp'),
     uglify       = require('gulp-uglify'),
     rename       = require('gulp-rename'),
