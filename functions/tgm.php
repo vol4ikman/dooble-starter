@@ -49,6 +49,11 @@ function gulp_starter_register_required_plugins() {
 			'name'	   => 'Contact Form 7',
 			'slug'	   => 'contact-form-7',
 			'required' => true,
+		),	
+		array(
+			'name'	   => 'Flamingo',
+			'slug'	   => 'flamingo',
+			'required' => false,
 		),		
 		array(
 			'name'	   => 'Regenerate Thumbnails',
@@ -64,7 +69,22 @@ function gulp_starter_register_required_plugins() {
 			'name'	   => 'Duplicate Post',
 			'slug'	   => 'duplicate-post',
 			'required' => false,
-		)
+		),
+		array(
+			'name'	   => 'Intuitive Custom Post Order',
+			'slug'	   => 'intuitive-custom-post-order',
+			'required' => false,
+		),
+		array(
+			'name'	   => 'Loco Translate',
+			'slug'	   => 'loco-translate',
+			'required' => false,
+		),
+		array(
+			'name'	   => 'Post Type Archive Link',
+			'slug'	   => 'post-type-archive-links',
+			'required' => false,
+		)		
 
 	);
 
