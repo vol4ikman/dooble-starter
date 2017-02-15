@@ -31,6 +31,7 @@ function qstheme_textdomain(){
 ****************************************/
 get_template_part("admin/options");
 get_template_part("admin/types");
+get_template_part("functions/enqueue");
 get_template_part("functions/hooks");
 get_template_part("functions/functions");
 get_template_part("functions/front-ajax");
