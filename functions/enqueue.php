@@ -1,8 +1,4 @@
 <?php
-define('CSS_INC', THEME.'/build/css/');
-define('JS_INC', THEME.'/build/js/');
-define('ENV', 'dev');
-
 // Load styles
 function qs_theme_styles(){
     if(ENV == 'dev'){
