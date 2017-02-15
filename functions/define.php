@@ -2,6 +2,11 @@
 /*****************************************
 **  Define
 *****************************************/
+define('ENV', 'dev');
+
+define('CSS_INC', THEME.'/build/css/');
+define('JS_INC', THEME.'/build/js/');
+
 if( !defined('THEME') ){
     define("THEME", get_template_directory_uri());
 } 
