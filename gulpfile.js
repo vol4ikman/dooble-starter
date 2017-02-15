@@ -22,6 +22,7 @@ var source_scripts = [
     './assets/js/device.min.js',
     './assets/js/magnific.js',
     './assets/js/slick.min.js',
+    './assets/js/functions.js',
     './assets/js/ajax.js',
 ];
 
