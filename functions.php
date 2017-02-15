@@ -1,24 +1,4 @@
-<?php
-/*****************************************
-**  Define
-*****************************************/
-if( !defined('THEME') ){
-    define("THEME", get_template_directory_uri());
-} 
-//if wpml
-// define("LANG",ICL_LANGUAGE_CODE);
-define("LANG", "he");
-if(is_rtl()){
-    define("FLOAT", 'right');
-    define("FOUNDATION", THEME.'/assets/foundation-6.2.1-rtl');
-}
-else{
-    define("FLOAT", 'left');
-    define("FOUNDATION", THEME.'/assets/foundation-6.2.1-ltr');
-}
-if( !defined('TEMPLATEPATH') ) {
-    define( 'TEMPLATEPATH', get_template_directory() );    
-}   	
+<?php 	
 /*****************************************
 **  Languages
 *****************************************/
@@ -29,14 +9,16 @@ function qstheme_textdomain(){
 /*****************************************
 **  Includes
 ****************************************/
-get_template_part("admin/options");
-get_template_part("admin/types");
+get_template_part("functions/define");
 get_template_part("functions/enqueue");
 get_template_part("functions/hooks");
 get_template_part("functions/functions");
 get_template_part("functions/front-ajax");
 get_template_part("functions/helpers");
 get_template_part("functions/tgm");
+
+get_template_part("admin/options");
+get_template_part("admin/types");
 /*****************************************
 **  Global
 *****************************************/
