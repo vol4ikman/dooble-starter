@@ -36,14 +36,3 @@ if (function_exists('add_theme_support')){
     // Enables post and comment RSS feed links to head
     add_theme_support('automatic-feed-links');
 }
-/**********************
-    ACF Google API
-**********************/
-function get_google_api_key(){
-    $google_api_key = get_field('google_api_key','option');
-    return $google_api_key;
-}
-function google_api_acf_init() {
-acf_update_setting('google_api_key', get_google_api_key());
-}
-add_action('acf/init', 'google_api_acf_init');
