@@ -3,13 +3,12 @@
 **  Define
 *****************************************/
 define('ENV', 'dev');
-
+if( !defined('THEME') ){
+    define("THEME", get_template_directory_uri());
+}
 define('CSS_INC', THEME.'/build/css/');
 define('JS_INC', THEME.'/build/js/');
 
-if( !defined('THEME') ){
-    define("THEME", get_template_directory_uri());
-} 
 //if wpml
 // define("LANG",ICL_LANGUAGE_CODE);
 define("LANG", "he");
