@@ -1,7 +1,7 @@
 <?php get_header(); ?>
 
 	<!-- section -->
-	<section role="main">
+	<section role="main" class="page-404">
 	
 		<!-- article -->
 		<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
