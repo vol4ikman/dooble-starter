@@ -25,3 +25,8 @@ function isMobile(width) {
         return false;
     }
 }
+function animate_scroll(target){
+    jQuery('html, body').animate({
+        scrollTop: jQuery(target).offset().top
+    }, 1000);
+}
