@@ -9,6 +9,19 @@ var gulp         = require('gulp'),
     concat       = require('gulp-concat'),
     notify       = require("gulp-notify");
 
+/*******************************
+    Define CSS Framework
+*******************************/
+var framework = 'foundation'; // foundation or bootstrap <==================
+
+if( framework == 'foundation' ) {
+    var framework_js = './assets/' + framework + '-6.2.1-ltr/js/vendor/foundation.min.js';
+    var framework_css = './assets/' + framework + '-6.2.1-ltr/css/foundation.min.css';
+} elseif( framework == 'bootstrap' ) {
+    var framework_js = './assets/' + framework + '/js/bootstrap.min.js';
+    var framework_css = './assets/' + framework + '/css/bootstrap.min.css';
+}
+
 gulp.task('default', function(){
     console.log("Gulp default started");
 });
@@ -18,7 +31,7 @@ gulp.task('default', function(){
 **************************/
 
 var source_scripts = [
-    './assets/foundation-6.2.1-ltr/js/vendor/foundation.min.js',
+    framework_js,
     './assets/js/device.min.js',
     './assets/js/magnific.js',
     './assets/js/slick.min.js',
@@ -38,7 +51,7 @@ gulp.task('js', function() {
 
 var source_styles = [
     './assets/css/normalize.css',
-    './assets/foundation-6.2.1-ltr/css/foundation.min.css',
+    framework_css,
     './assets/css/animate.css',
     './assets/css/magnific.css',
     './assets/css/slick.css'
