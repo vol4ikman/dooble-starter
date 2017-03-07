@@ -17,7 +17,7 @@ var framework = 'foundation'; // foundation or bootstrap <==================
 if( framework == 'foundation' ) {
     var framework_js = './assets/' + framework + '-6.2.1-ltr/js/vendor/foundation.min.js';
     var framework_css = './assets/' + framework + '-6.2.1-ltr/css/foundation.min.css';
-} elseif( framework == 'bootstrap' ) {
+} else if( framework == 'bootstrap' ) {
     var framework_js = './assets/' + framework + '/js/bootstrap.min.js';
     var framework_css = './assets/' + framework + '/css/bootstrap.min.css';
 }
