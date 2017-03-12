@@ -19,6 +19,7 @@ get_template_part("functions/tgm");
 
 get_template_part("admin/options");
 get_template_part("admin/types");
+get_template_part("admin/fields");
 /*****************************************
 **  Global
 *****************************************/
