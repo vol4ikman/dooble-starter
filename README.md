@@ -29,6 +29,19 @@ If using atom, DO NOT forget setup "watcher" =)
 "/public_html/wp-content/themes/gulp-starter/build/js/production.min.js"
 ```
 
+### Default gitignore
+```html
+# Wordpress
+.ftpconfig
+node_modules
+wp-admin
+wp-includes
+wp-content/plugins
+wp-content/upgrade
+wp-content/languages
+wp-config.php
+```
+
 ### Gulp file to upload all to your ftp server
 <a href="https://gist.github.com/vol4ikman/92e381e5adee0b1e36606d82d5f45613" target="_blank"> Click here </a>
 
