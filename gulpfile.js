@@ -15,7 +15,7 @@ var gulp         = require('gulp'),
 var framework = 'foundation'; // foundation or bootstrap <==================
 
 if( framework == 'foundation' ) {
-    var framework_js = './assets/' + framework + '/js/vendor/foundation.min.js';
+    var framework_js = './assets/' + framework + '/js/foundation.min.js';
     var framework_css = './assets/' + framework + '/css/foundation.min.css';
 } else if( framework == 'bootstrap' ) {
     var framework_js = './assets/' + framework + '/js/bootstrap.min.js';
