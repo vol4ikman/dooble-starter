@@ -34,20 +34,22 @@
 		
 <div class="off-canvas-wrapper">
 
-    <div class="off-canvas-wrapper-inner" data-off-canvas-wrapper>
-
-	<div class="off-canvas position-<?php echo FLOAT;?>" id="offCanvas<?php echo FLOAT;?>" data-off-canvas data-position="<?php echo FLOAT;?>">
+	<div class="off-canvas position-<?php echo FLOAT;?>" id="offCanvas<?php echo FLOAT;?>" data-off-canvas>
+		<!-- Your menu or Off-canvas content goes here -->
 		<div class="mobile_menu_wrapper">
 			<?php //mobile_menu(); ?>
 		</div>
 	</div>
+	
 	<div class="off-canvas-content" data-off-canvas-content>		
 	
 		<!-- wrapper -->
-		<div class="wrapper">
+		<div class="site-wrapper">
 	
 			<!-- header -->
 			<header class="header clear" role="banner">
+				
+					<button type="button" class="button" data-toggle="offCanvas<?php echo FLOAT;?>">Open Menu</button>
 				
 					<!-- logo -->
 					<div class="logo">
