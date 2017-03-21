@@ -1,14 +1,12 @@
-			<footer class="footer" role="contentinfo">
-			</footer><!-- /footer -->
+	<footer class="footer" role="contentinfo">
+	</footer><!-- /footer -->
 		
-		</div><!-- /wrapper -->
+		</div><!-- end of site-wrapper -->
 		
-	</div><!-- off-canvas-content -->
+	</div><!-- end of off-canvas-content -->
 
-  </div><!-- off-canvas-wrapper-inner -->
-
-</div><!-- off-canvas-wrapper -->		
-		
+</div><!-- end of off-canvas-wrapper -->
+				
 		<?php wp_footer(); ?>
 	</body>
 </html>
