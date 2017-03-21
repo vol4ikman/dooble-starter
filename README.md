@@ -8,10 +8,15 @@
 4. Upload <a href="https://gist.github.com/vol4ikman/92e381e5adee0b1e36606d82d5f45613" target="_blank">this gulpfile.js</a> to your ftp server (DO NOT forget change default settings)
 5. From public_html run this command:
 `npm install gulp gulp-decompress gulp-download gulp-util vinyl-ftp del gulp-open gulp-run`
-6. Run this command from the root of your WordPress theme: <br>
-`npm install gulp gulp-uglify gulp-rename gulp-clean-css gulp-autoprefixer gulp-concat gulp-notify`
+6. After install gulp plugins run this command:
+`gulp deploy`
+7. Run this command from the root of your WordPress theme (/public_html/wp-content/themes/$theme_name$/): <br>
+`gulp dev`
 
 ### Explanation
+Gulp deploy install all those plugins inside your theme folder
+`npm install gulp gulp-uglify gulp-rename gulp-clean-css gulp-autoprefixer gulp-concat gulp-notify`
+<hr>
 1. `gulp-uglify`: JS minify - <a href="https://www.npmjs.com/package/gulp-uglify" >link</a>
 2. `gulp-rename`: Rename files - <a href="https://www.npmjs.com/package/gulp-rename" >link</a>
 3. `gulp-clean-css`: CSS minify - <a href="https://www.npmjs.com/package/gulp-clean-css" >link</a>
