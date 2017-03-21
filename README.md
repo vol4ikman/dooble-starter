@@ -1,5 +1,4 @@
-# QS Starter Theme v.1.0
-<hr>
+# QS Starter Theme v.1.1
 
 ### Requirements
 1. Node JS - <a href="https://nodejs.org/en/" target="_blank">Get NodeJS</a>
