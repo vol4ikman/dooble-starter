@@ -5,7 +5,10 @@
 2. Gulp JS - <a href="http://gulpjs.com/" target="_blank">Get GulpJS</a>
 3. Gulp must be installed globally on your system:<br>
 `npm install gulp -g`
-3. Run this command from the root of your WordPress theme: <br>
+4. Upload <a href="https://gist.github.com/vol4ikman/92e381e5adee0b1e36606d82d5f45613" target="_blank">this gulpfile.js</a> to your ftp server (DO NOT forget change default settings)
+5. From public_html run this command:
+`npm install gulp gulp-decompress gulp-download gulp-util vinyl-ftp del gulp-open gulp-run`
+6. Run this command from the root of your WordPress theme: <br>
 `npm install gulp gulp-uglify gulp-rename gulp-clean-css gulp-autoprefixer gulp-concat gulp-notify`
 
 ### Explanation
@@ -37,8 +40,5 @@ wp-content/upgrade
 wp-content/languages
 wp-config.php
 ```
-
-### Gulp file to upload all to your ftp server
-<a href="https://gist.github.com/vol4ikman/92e381e5adee0b1e36606d82d5f45613" target="_blank"> Click here </a>
 
 ## Good Luck!
