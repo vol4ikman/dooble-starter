@@ -13,10 +13,12 @@
 7. Run this command from the root of your WordPress theme (/public_html/wp-content/themes/$theme_name$/): <br>
 `gulp dev`
 
+
+<hr>
 ### Explanation
 Gulp deploy install all those plugins inside your theme folder
 `npm install gulp gulp-uglify gulp-rename gulp-clean-css gulp-autoprefixer gulp-concat gulp-notify`
-<hr>
+
 1. `gulp-uglify`: JS minify - <a href="https://www.npmjs.com/package/gulp-uglify" >link</a>
 2. `gulp-rename`: Rename files - <a href="https://www.npmjs.com/package/gulp-rename" >link</a>
 3. `gulp-clean-css`: CSS minify - <a href="https://www.npmjs.com/package/gulp-clean-css" >link</a>
@@ -27,6 +29,7 @@ Gulp deploy install all those plugins inside your theme folder
 ** Atom text editor <a href="https://atom.io/" target="_blank">(download here)</a> is very recommended =)
 If using atom, DO NOT forget setup "watcher" =)
 
+<hr>
 ### Default Watchers
 ```html
 "/public_html/wp-content/themes/gulp-starter/build/css/*.css",
