@@ -33,7 +33,8 @@ function animate_scroll(target){
 
 /**************************
     Accessibility
-**************************/   
+**************************/
+// main menu wrapper selector = wrap_main_menu
 jQuery('.wrap_main_menu nav ul li.menu-item-has-children a').on('focusin',function(e){
     e.preventDefault();
     var this_el = jQuery(this);
