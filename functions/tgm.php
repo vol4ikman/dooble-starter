@@ -76,11 +76,6 @@ function gulp_starter_register_required_plugins() {
 			'required' => false,
 		),
 		array(
-			'name'	   => 'Loco Translate',
-			'slug'	   => 'loco-translate',
-			'required' => false,
-		),
-		array(
 			'name'	   => 'Post Type Archive Link',
 			'slug'	   => 'post-type-archive-links',
 			'required' => false,
