@@ -40,3 +40,6 @@ if (function_exists('add_theme_support')){
     add_theme_support( 'html5', array( 'gallery' ) );
     
 }
+
+// Remove default galleries css style
+add_filter( 'use_default_gallery_style', '__return_false' );
