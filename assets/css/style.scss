@@ -37,3 +37,32 @@ $link_hover : #ccc;
     clear: both;
   }
 }
+
+/**************************
+    WP Galleries
+**************************/
+.gallery-columns-2 {
+    display: inline-block;
+    width: 100%;
+    clear: both;
+    .gallery-item {
+        width: 48%;
+        float: right;
+        margin-left:2%;
+        margin-bottom: 10px;
+        &:nth-child(2){
+            margin-left:0;
+            float: left;
+        }
+        .gallery-icon {
+            margin-bottom: 10px;
+        }
+        .gallery-caption {
+            font-size: 14px;
+            margin-bottom: 0;
+            color: #666;
+            line-height: 26px;
+            padding: 0;
+        }
+    }
+}
