@@ -36,4 +36,7 @@ if (function_exists('add_theme_support')){
     add_image_size('small', 250, '', true);
     // Enables post and comment RSS feed links to head
     add_theme_support('automatic-feed-links');
+    // Enable support for wp galleries with figure tag
+    add_theme_support( 'html5', array( 'gallery' ) );
+    
 }
