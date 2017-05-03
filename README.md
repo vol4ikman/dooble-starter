@@ -31,12 +31,14 @@ If using atom, DO NOT forget setup "watcher" =)
 
 <hr>
 ### Default Watchers
+
 ```html
 "/public_html/wp-content/themes/gulp-starter/build/css/*.css",
 "/public_html/wp-content/themes/gulp-starter/build/js/*.js"
 ```
 
 ### Default gitignore
+
 ```html
 # Wordpress
 .ftpconfig
