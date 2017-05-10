@@ -9,7 +9,7 @@ if( function_exists('acf_add_options_page') ) {
         'redirect'		=> false
     ));
 
-    include('acf-options-import.php');
+    get_template_part("admin/acf-options-import");
 
     // acf_add_options_sub_page(array(
     //     'page_title' 	=> 'Header Settings',
