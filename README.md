@@ -1,6 +1,7 @@
 # QS Starter Theme v.1.1
 
 ### Requirements
+
 1. Node JS - <a href="https://nodejs.org/en/" target="_blank">Get NodeJS</a>
 2. Gulp JS - <a href="http://gulpjs.com/" target="_blank">Get GulpJS</a>
 3. Gulp must be installed globally on your system:<br>
@@ -16,7 +17,9 @@
 
 <hr>
 ### Explanation
+
 Gulp deploy install all those plugins inside your theme folder
+
 `npm install gulp gulp-uglify gulp-rename gulp-clean-css gulp-autoprefixer gulp-concat gulp-notify`
 
 1. `gulp-uglify`: JS minify - <a href="https://www.npmjs.com/package/gulp-uglify" >link</a>
