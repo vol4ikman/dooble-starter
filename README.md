@@ -1,6 +1,6 @@
 # QS Starter Theme v.1.1
 
-### Requirements
+<h3>Requirements</h3>
 
 1. Node JS - <a href="https://nodejs.org/en/" target="_blank">Get NodeJS</a>
 2. Gulp JS - <a href="http://gulpjs.com/" target="_blank">Get GulpJS</a>
@@ -16,7 +16,7 @@
 
 
 <hr>
-### Explanation
+<h3>Explanation</h3>
 
 Gulp deploy install all those plugins inside your theme folder
 
@@ -33,14 +33,14 @@ Gulp deploy install all those plugins inside your theme folder
 If using atom, DO NOT forget setup "watcher" =)
 
 <hr>
-### Default Watchers
+<h3>Default Watchers</h3>
 
 ```html
 "/public_html/wp-content/themes/gulp-starter/build/css/*.css",
 "/public_html/wp-content/themes/gulp-starter/build/js/*.js"
 ```
 
-### Default gitignore
+<h3>Default gitignore</h3>
 
 ```html
 # Wordpress
