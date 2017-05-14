@@ -46,3 +46,31 @@ jQuery('body').on('focusout','ul li.menu-item-has-children.hover ul li:last-chil
     var this_el = jQuery(this);
     this_el.parent().parent().parent().removeClass('hover');
 });
+/*************************
+    Slick slider
+*************************/
+var sliders = [];
+
+function render_sliders(){
+    
+    var slider = jQuery(".slick-slider").each( function(){
+        
+        var autoplay        = jQuery(this).data( "autoplay" );
+        var dots            = jQuery(this).data( "dots" ) ? jQuery(this).data( "dots" ) : false;
+        var arrows          = jQuery(this).data( "arrows" ) ? jQuery(this).data( "arrows" ) : true;
+        var slidesToShow    = jQuery(this).data( "slidestoshow" ) ? jQuery(this).data( "slidestoshow" ) : 1;
+        var slidesToScroll  = jQuery(this).data( "slidesToScroll" ) ? jQuery(this).data( "slidesToScroll" ) : 1;
+
+        jQuery( this ).slick({
+          slidesToShow: 3,
+          arrows : arrows,
+          slidesToScroll: 1,
+          autoplay: autoplay,
+          autoplaySpeed: 2000,
+          dots : dots
+        });
+        
+    });
+
+    sliders.push( slider );
+}
