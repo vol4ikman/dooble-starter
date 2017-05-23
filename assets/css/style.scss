@@ -1,42 +1,12 @@
 //compileCompressed: ../../build/css/main-style.css
 
+@import 'vars';
+@import 'mixins';
+
 $black: #000;
 $white: #FFF;
 $link_color : #000;
 $link_hover : #ccc;
-
-@mixin border-radius($radius) {
-  -webkit-border-radius: $radius;
-     -moz-border-radius: $radius;
-      -ms-border-radius: $radius;
-          border-radius: $radius;
-}
-@mixin trans($ms) {
-    -webkit-transition: all $ms ease;
-    -moz-transition: all $ms ease;
-    -ms-transition: all $ms ease;
-    -o-transition: all $ms ease;
-    transition: all $ms ease;
-}
-@mixin scale($size) {
-    -moz-transform: scale($size);
-    -webkit-transform: scale($size);
-    -o-transform: scale($size);
-    -ms-transform: scale($size);
-    transform: scale($size);
-}
-@mixin clean_ul(){
-  margin:0;
-  padding:0;
-  list-style-type: none;
-}
-@mixin clearfix {
-  &:after {
-    content: "";
-    display: table;
-    clear: both;
-  }
-}
 
 /**************************
     WP Galleries
