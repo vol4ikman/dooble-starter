@@ -1,5 +1,5 @@
 // Run this command first:
-// npm install gulp gulp-uglify gulp-rename gulp-clean-css gulp-autoprefixer gulp-concat gulp-notify
+// npm install gulp gulp-uglify gulp-rename gulp-clean-css gulp-autoprefixer gulp-concat gulp-rtlcss gulp-notify
 
 var gulp         = require('gulp'),
     uglify       = require('gulp-uglify'),
@@ -7,6 +7,7 @@ var gulp         = require('gulp'),
     cleanCSS     = require('gulp-clean-css'),
     autoprefixer = require('gulp-autoprefixer'),
     concat       = require('gulp-concat'),
+    rtlcss       = require('gulp-rtlcss'),
     notify       = require("gulp-notify");
 
 /*******************************
@@ -56,6 +57,14 @@ var source_styles = [
     './assets/css/magnific.css',
     './assets/css/slick.css'
 ];
+
+// Auto generate css to RTL
+gulp.task('css-to-rtl', function () {
+    return gulp.src('./build/css/main-style.css')
+        .pipe(rename('main.style.rtl.css'))
+        .pipe(rtlcss())
+        .pipe(gulp.dest('./build/css/'));
+});
 
 gulp.task('css', ['js'], function() {
   return gulp.src(source_styles)
