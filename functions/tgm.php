@@ -66,8 +66,8 @@ function gulp_starter_register_required_plugins() {
 			'required' => false,
 		),	
 		array(
-			'name'	   => 'Duplicate Post',
-			'slug'	   => 'duplicate-post',
+			'name'	   => 'Post Duplicator',
+			'slug'	   => 'post-duplicator',
 			'required' => false,
 		),
 		array(
