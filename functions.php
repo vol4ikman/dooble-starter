@@ -19,7 +19,9 @@ get_template_part("functions/tgm");
 if ( class_exists( 'WooCommerce' ) ) {
     get_template_part("functions/woocommerce");
 }
-
+if ( defined('QS_API_ENDPOINT') && QS_API_ENDPOINT ){ // <==== currently on beta stage
+    get_template_part("functions/qs_api_endpoint");
+}
 get_template_part("admin/options");
 get_template_part("admin/types");
 /*****************************************
