@@ -1,0 +1,2 @@
+<?php
+/* Woocommerce Setup */
