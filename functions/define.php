@@ -23,3 +23,4 @@ else{
 if( !defined('TEMPLATEPATH') ) {
     define( 'TEMPLATEPATH', get_template_directory() );    
 } 
+define('qs_api_endpoint', false);
