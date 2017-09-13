@@ -16,6 +16,9 @@ get_template_part("functions/functions");
 get_template_part("functions/ajax");
 get_template_part("functions/helpers");
 get_template_part("functions/tgm");
+if ( class_exists( 'WooCommerce' ) ) {
+    get_template_part("functions/woocommerce");
+}
 
 get_template_part("admin/options");
 get_template_part("admin/types");
