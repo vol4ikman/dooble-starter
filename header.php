@@ -8,6 +8,8 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
 	<meta name="format-detection" content="telephone=no">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+	<?php /* MANIFEST - https://developer.mozilla.org/en-US/docs/Web/Manifest */ ?>
+	<link rel="manifest" href="<?php echo THEME; ?>/manifest.json">
 	<?php /* Please create favicon files with http://iconogen.com/ */ ?>
 	<link rel="shortcut icon" href="<?php echo THEME; ?>/images/favicon/favicon.ico" type="image/x-icon" />
 	<link rel="apple-touch-icon" sizes="57x57" href="<?php echo THEME; ?>/images/favicon/apple-touch-icon-57x57.png">
