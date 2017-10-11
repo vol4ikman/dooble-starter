@@ -54,6 +54,7 @@ wp-content/languages
 wp-config.php
 ```
 
+<hr>
 <h3>Manifest JSON</h3>
 
 ```html
