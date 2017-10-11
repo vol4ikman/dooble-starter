@@ -61,7 +61,7 @@ wp-config.php
 <link rel="manifest" href="/manifest.json">
 ```
 
-Used for PWA (Progressive Web Applications). Docs & Examples are here <a href="https://developer.mozilla.org/en-US/docs/Web/Manifest" target="_blank">Deploying a manifest</a>
-To generate manifest.json icons & favicon icons, please go to <a href="http://digitalagencyrankings.com/iconogen/" target="_blank"><strong>ICONOGEN</strong></a>
+- Used for PWA (Progressive Web Applications). Docs & Examples are here <a href="https://developer.mozilla.org/en-US/docs/Web/Manifest" target="_blank">Deploying a manifest</a>
+- To generate manifest.json icons & favicon icons, please go to <a href="http://digitalagencyrankings.com/iconogen/" target="_blank"><strong>ICONOGEN</strong></a>
 
 ## Good Luck!
