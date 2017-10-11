@@ -54,4 +54,12 @@ wp-content/languages
 wp-config.php
 ```
 
+<h3>Manifest JSON</h3>
+
+```html
+<link rel="manifest" href="/manifest.json">
+```
+
+Used for PWA (Progressive Web Applications). Docs & Examples are here <a href="https://developer.mozilla.org/en-US/docs/Web/Manifest" target="_blank">Deploying a manifest</a>
+
 ## Good Luck!
