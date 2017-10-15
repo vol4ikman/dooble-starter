@@ -56,6 +56,7 @@ function header_menu() {
 		array(
 			'theme_location'  => 'header-menu',
 			'menu_class'      => 'header_menu_class',
+			'container'       => ''
 		)
 	);
 }
