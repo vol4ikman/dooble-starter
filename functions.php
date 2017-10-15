@@ -47,3 +47,6 @@ if (function_exists('add_theme_support')){
 
 // Remove default galleries css style
 add_filter( 'use_default_gallery_style', '__return_false' );
+
+// Remove admin bar
+//add_filter('show_admin_bar', '__return_false');
