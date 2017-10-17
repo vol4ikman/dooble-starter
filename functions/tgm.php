@@ -79,7 +79,12 @@ function gulp_starter_register_required_plugins() {
 			'name'	   => 'Post Type Archive Link',
 			'slug'	   => 'post-type-archive-links',
 			'required' => false,
-		)		
+		),
+		array(
+			'name'		=> 'ACF Nav Menu',
+			'slug'		=> 'advanced-custom-fields-nav-menu-field',
+			'required'	=> false
+		)
 
 	);
 
