@@ -1,4 +1,6 @@
-.slick-slider {
+/* Slider */
+.slick-slider
+{
     position: relative;
 
     display: block;
@@ -53,6 +55,8 @@
     left: 0;
 
     display: block;
+    margin-left: auto;
+    margin-right: auto;
 }
 .slick-track:before,
 .slick-track:after
