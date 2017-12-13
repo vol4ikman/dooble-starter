@@ -2,7 +2,7 @@
 // npm install gulp gulp-bower gulp-uglify gulp-rename gulp-clean-css gulp-autoprefixer gulp-concat gulp-rtlcss gulp-notify
 
 var gulp         = require('gulp'),
-	bower 		 = require('gulp-bower');
+	bower 		 = require('gulp-bower'),
     uglify       = require('gulp-uglify'),
     rename       = require('gulp-rename'),
     cleanCSS     = require('gulp-clean-css'),
