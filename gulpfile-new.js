@@ -17,8 +17,8 @@ var gulp         = require('gulp'),
 var framework = 'foundation'; // foundation or bootstrap <==================
 
 if( framework == 'foundation' ) {
-    var framework_js = './assets/' + framework + '/js/foundation.min.js';
-    var framework_css = './assets/' + framework + '/css/foundation.min.css';
+    var framework_js = './assets/foundation-sites/dist/js/foundation.min.js';
+    var framework_css = './assets/foundation-sites/dist/css/foundation-float.min.css';
 } else if( framework == 'bootstrap' ) {
     var framework_js = './assets/' + framework + '/js/bootstrap.min.js';
     var framework_css = './assets/' + framework + '/css/bootstrap.min.css';
@@ -35,8 +35,8 @@ gulp.task('default', function(){
 var source_scripts = [
     framework_js,
     './assets/js/device.min.js',
-    './assets/js/magnific.js',
-    './assets/js/slick.min.js',
+    './assets/magnific-popup/dist/jquery.magnific-popup.js',
+    './assets/slick-carousel/slick/slick.js',
     './assets/js/functions.js',
     './assets/js/ajax.js',
 ];
@@ -44,9 +44,9 @@ var source_scripts = [
 var source_styles = [
     './assets/css/normalize.css',
     framework_css,
-    './assets/css/animate.css',
-    './assets/css/magnific.css',
-    './assets/css/slick.css'
+    './assets/animate.css/animate.css',
+    './assets/magnific-popup/dist/magnific-popup.css',
+    './assets/slick-carousel/slick/slick.css'
 ];
 
 gulp.task('bower', function() {
