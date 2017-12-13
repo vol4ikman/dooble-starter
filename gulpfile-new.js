@@ -29,7 +29,7 @@ gulp.task('default', function(){
 });
 
 /*************************
-*****  Development *****
+** Development Sources ***
 **************************/
 
 var source_scripts = [
@@ -48,6 +48,10 @@ var source_styles = [
     './assets/magnific-popup/dist/magnific-popup.css',
     './assets/slick-carousel/slick/slick.css'
 ];
+
+/******************************
+	Tasks mapping
+******************************/	
 
 gulp.task('bower', function() {
   return bower({ cmd: 'install'});
