@@ -51,9 +51,9 @@ function gulp_starter_register_required_plugins() {
 			'required' => true,
 		),	
 		array(
-			'name'	   => 'Flamingo',
-			'slug'	   => 'flamingo',
-			'required' => false,
+			'name'	   => 'Contact Form 7 Database Addon – CFDB7',
+			'slug'	   => 'contact-form-cfdb7',
+			'required' => true,
 		),		
 		array(
 			'name'	   => 'Regenerate Thumbnails',
