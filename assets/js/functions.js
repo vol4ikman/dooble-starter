@@ -52,9 +52,9 @@ jQuery('body').on('focusout','ul li.menu-item-has-children.hover ul li:last-chil
 var sliders = [];
 
 function render_sliders(){
-    
+
     var slider = jQuery(".slick-slider").each( function(){
-        
+
         var autoplay        = jQuery(this).data( "autoplay" );
         var dots            = jQuery(this).data( "dots" ) ? jQuery(this).data( "dots" ) : false;
         var arrows          = jQuery(this).data( "arrows" ) ? jQuery(this).data( "arrows" ) : true;
@@ -69,8 +69,31 @@ function render_sliders(){
           autoplaySpeed: 2000,
           dots : dots
         });
-        
+
     });
 
     sliders.push( slider );
+}
+
+function setCookie( cname, cvalue, exdays ) {
+    var d = new Date();
+    d.setTime(d.getTime() + ( exdays*24*60*60*1000 ));
+    var expires = "expires="+ d.toUTCString();
+    document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
+}
+
+function getCookie( cname ) {
+    var name = cname + "=";
+    var decodedCookie = decodeURIComponent(document.cookie);
+    var ca = decodedCookie.split(';');
+    for(var i = 0; i <ca.length; i++) {
+        var c = ca[i];
+        while (c.charAt(0) == ' ') {
+            c = c.substring(1);
+        }
+        if (c.indexOf(name) == 0) {
+            return c.substring(name.length, c.length);
+        }
+    }
+    return "";
 }
