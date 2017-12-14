@@ -1,29 +1,6 @@
-<?php 	
-/*****************************************
-**  Languages
-*****************************************/
-add_action('after_setup_theme', 'qstheme_textdomain');
-function qstheme_textdomain(){
-    load_theme_textdomain('qstheme', THEME . '/languages');
-}
-/*****************************************
-**  Includes
-****************************************/
-get_template_part("functions/define");
-get_template_part("functions/enqueue");
-get_template_part("functions/hooks");
-get_template_part("functions/functions");
-get_template_part("functions/ajax");
-get_template_part("functions/helpers");
-get_template_part("functions/tgm");
-if ( class_exists( 'WooCommerce' ) ) {
-    get_template_part("functions/woocommerce");
-}
-if ( defined('QS_API_ENDPOINT') && QS_API_ENDPOINT ){ // <==== currently on beta stage
-    get_template_part("functions/qs_api_endpoint");
-}
-get_template_part("admin/options");
-get_template_part("admin/types");
+<?php
+
+get_template_part( "functions/theme_dependencies" );
 /*****************************************
 **  Global
 *****************************************/
@@ -42,7 +19,7 @@ if (function_exists('add_theme_support')){
     add_theme_support('automatic-feed-links');
     // Enable support for wp galleries with figure tag
     add_theme_support( 'html5', array( 'gallery' ) );
-    
+
 }
 
 // Remove default galleries css style
