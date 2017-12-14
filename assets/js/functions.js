@@ -1,3 +1,8 @@
+/**
+ * Global variables
+ */
+var sliders = [];
+
 /**************************
     Accessibility
 **************************/
@@ -16,7 +21,7 @@ jQuery('body').on('focusout','ul li.menu-item-has-children.hover ul li:last-chil
 /*************************
     Slick slider
 *************************/
-var sliders = [];
+
 
 /**
  * Walk through slick slider css selector and generate slick render_sliders
