@@ -6,6 +6,14 @@
 /**************************
     WP Galleries
 **************************/
+.modules-test{
+    .module-wrap {
+        background: #e6e2e2;
+        padding: 0 20px;
+        border: 1px solid #ccc;
+    }
+}
+
 .gallery-columns-2 {
     display: inline-block;
     width: 100%;

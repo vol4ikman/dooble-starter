@@ -26,10 +26,6 @@ class QSloginModule extends QSmoduleBase{
 
         $this->_set( 'dirname' , $dirname );
 
-        $this->_set( 'module_base_url' , QS_MODULES_URL . '/' . $dirname  );
-
-        $this->_set( 'dirname' , $dirname );
-
         $this->get_module_dependencies();
 
         $this->dependncy_load_and_check();
@@ -47,6 +43,31 @@ class QSloginModule extends QSmoduleBase{
 
 
     }
+
+    public function get_login_args(){
+
+        $this->_set('login_form_defaults' , array(
+        	'echo'           => true,
+        	'remember'       => true,
+        	'redirect'       => ( is_ssl() ? 'https://' : 'http://' ) . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'],
+        	'form_id'        => 'loginform',
+        	'id_username'    => 'user_login',
+        	'id_password'    => 'user_pass',
+        	'id_remember'    => 'rememberme',
+        	'id_submit'      => 'wp-submit',
+        	'label_username' => __( 'Username or Email Address' ),
+        	'label_password' => __( 'Password' ),
+        	'label_remember' => __( 'Remember Me' ),
+        	'label_log_in'   => __( 'Log In' ),
+        	'value_username' => '',
+        	'value_remember' => false,
+            'use_ajax'       => false
+            )
+        );
+
+        return array_merge( $this->_get( 'login_form_defaults' ) , $this->_get( 'view_args' )['login_args'] );
+    }
+
     /**
      * Load scripts and style for admin use (optional)
      * These are called from the parent class
@@ -78,6 +99,15 @@ class QSloginModule extends QSmoduleBase{
                 'type' => 'class',
                 'name' => 'QSloginModuleHelper',
                 'file' => 'module_helpers.php'
+            ),
+            'controller' => array(
+                'type' => 'class',
+                'name' => 'QSloginController',
+                'file' => 'controller.php'
+            ),
+            'acf' => array(
+                'type' => 'function',
+                'name' => 'get_field'
             )
         );
 
