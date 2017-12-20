@@ -12,13 +12,44 @@
  */
 abstract class QSmoduleBase
 {
+    /**
+     * Is the module active
+     * @var [type]
+     */
     private $is_active;
 
+    /**
+     * Basename of the module directory
+     * @var [type]
+     */
     private $dirname;
+    /**
+     * Module CSS Path
+     * @var [type]
+     */
+    private $css_url;
+    /**
+     * Module Javscript path
+     * @var [type]
+     */
+    private $js_url;
 
-    private $css_path;
+    /**
+     * The complete module path
+     * @var [type]
+     */
+    private $module_path;
 
-    private $js_path;
+    /**
+     * Module base path
+     * @var [type]
+     */
+    private $module_base_path;
+    /**
+     * Holds the args that will be transferred to the template view
+     * @var [type]
+     */
+    private $view_args;
     /**
      * The main constructor function
      * @var [type]
@@ -50,7 +81,19 @@ abstract class QSmoduleBase
     abstract function load_public_scripts();
 
     /**
-     * Check if all dependencies are installed
+     * The main view , this function will retrive the main module view
+     * @var [type]
+     */
+    public function view( $view_args = array() ){
+
+        $this->_set( 'view_args' , $view_args );
+
+        $this->qs_get_module_template( 'tpl-base' );
+
+    }
+
+    /**
+     * Check if all dependencies are installed - this function will be called on each module
      * @var [type]
      */
     function dependncy_load_and_check(){
@@ -65,15 +108,25 @@ abstract class QSmoduleBase
             $this->_set( 'is_active' , true );
         }else{
             $this->_set( 'is_active' , false );
+            // TODO: add error admin notice
         }
 
         $this->set_global_hooks();
 
     }
     function define(){
-        $this->css_path = QS_MODULES_URL . "/" . $this->_get( 'dirname' ) . '/assets/css/';
 
-        $this->js_path = QS_MODULES_URL . "/" . $this->_get( 'dirname' ) . '/assets/js/';
+        $this->_set( 'module_base_url' , QS_MODULES_URL . '/' . $this->dirname  );
+
+        $this->_set( 'css_url' , QS_MODULES_URL . "/" . $this->dirname . '/assets/css/');
+
+        $this->_set( 'js_url' , QS_MODULES_URL . "/" . $this->dirname . '/assets/js/');
+
+        $this->_set( 'module_path' , QS_MODULES . "/" . $this->dirname . '/' );
+
+        $this->_set( 'module_base_path' , "functions/modules/" . $this->dirname . '/' );
+
+
     }
     /**
      * Check that the module dependencies are all loaded
@@ -110,7 +163,7 @@ abstract class QSmoduleBase
 
             foreach( $this->dependencies as $dependency ){
                 if( isset( $dependency['file'] ) ){
-                    require_once( QS_MODULES . '/' . $this->_get( 'dirname' ) . '/' . $dependency['file'] );
+                    require_once( QS_MODULES . '/' . $this->dirname . '/' . $dependency['file'] );
                 }
             }
         }
@@ -144,4 +197,45 @@ abstract class QSmoduleBase
         $this->$name = $value;
     }
 
+    /**
+     * Get template part function that will get the required templates files
+     * @param  [string] $slug [the file slug]
+     * @param  string $name [the name of the tempate]
+     * @version     1.0
+     */
+
+    function qs_get_module_template( $slug , $name = '' ) {
+        $template = '';
+
+        if ( $name  ) {
+            $template = locate_template( array( "{$slug}-{$name}.php", "{$slug}-{$name}.php" ) );
+        }
+
+        if ( ! $template && $name && file_exists( TEMPLATEPATH . "/view/module-themes/{$slug}-{$name}.php" ) ) {
+            $template = "/view/module-themes/{$slug}-{$name}.php";
+        }
+
+        if ( ! $template && ! $name && file_exists( TEMPLATEPATH  . "/view/module-themes/" . $this->dirname . "/{$slug}.php" ) ) {
+            $template = TEMPLATEPATH . "/view/module-themes/" . $this->dirname . "/{$slug}.php";
+        }
+
+        if ( ! $template && $name && file_exists( $this->module_base_path . "templates/{$slug}-{$name}.php" ) ) {
+            $template = $this->module_base_path . "/templates/{$slug}-{$name}.php";
+        }
+
+
+        if ( ! $template ) {
+            $template = locate_template( array( "{$slug}.php", "{$slug}.php" ) );
+        }
+
+        if ( ! $template ) {
+            $template = locate_template( array( $this->module_base_path . "templates/{$slug}.php" ) );
+        }
+
+        $template = apply_filters( 'qs_get_module_template', $template, $slug, $name );
+
+        if ( $template ) {
+            include( $template );
+        }
+    }
 }

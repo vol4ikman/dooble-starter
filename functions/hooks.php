@@ -1,37 +1,17 @@
 <?php
-
 /*****************************************
 **  Languages
 *****************************************/
 add_action( 'after_setup_theme' , 'qstheme_textdomain' );
 add_filter( 'body_class' , 'add_body_class' );
 
+add_action('acf/init', 'google_api_acf_init');
+add_action('wp_head', 'qs_add_header_scripts');
+add_action('wp_footer', 'qs_add_footer_scripts', 100);
 // Add Theme Stylesheet To ADMIN
 add_action( 'admin_enqueue_scripts', 'qs_admin_theme_styles' );
-function qs_admin_theme_styles(){
-    wp_register_style( 'admin-style', THEME . '/admin/css/style.css', array(), NULL, 'all' );
-    wp_enqueue_style( 'admin-style' );
-}
-
-
 // Register THEME Navigation
 add_action('init', 'register_theme_menus');
-function register_theme_menus() {
-    register_nav_menus(array(
-        'header-menu' => __('Header Menu', 'qstheme'), // Main Navigation
-    ));
-}
-
-//Header menu
-function header_menu() {
-	wp_nav_menu(
-		array(
-			'theme_location'  => 'header-menu',
-			'menu_class'      => 'header_menu_class',
-			'container'       => ''
-		)
-	);
-}
 
 // Remove Actions
 remove_action( 'wp_head' , 'feed_links_extra' , 3); // Display the links to the extra feeds such as category feeds
@@ -55,3 +35,6 @@ add_filter( 'the_excerpt' , 'do_shortcode' ); // Allows Shortcodes to be execute
 add_filter( 'wp_calculate_image_srcset_meta', '__return_null' ); // Remove thumbnail src set for responsive images
 // Remove Filters
 remove_filter( 'the_excerpt' , 'wpautop' ); // Remove <p> tags from Excerpt altogether
+
+add_action('wp_enqueue_scripts', 'qs_theme_styles');
+add_action( 'wp_enqueue_scripts', 'qs_theme_scripts' );

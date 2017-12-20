@@ -11,6 +11,8 @@ get_template_part( 'functions/ajax' );
 get_template_part( 'functions/helpers' );
 get_template_part( 'functions/tgm' );
 
+
+get_template_part( 'functions/classes/class.admin-notices' );
 get_template_part( 'functions/classes/class.base-module' );
 get_template_part( 'functions/classes/class.base-module-helper' );
 

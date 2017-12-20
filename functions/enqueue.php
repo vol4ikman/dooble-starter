@@ -10,7 +10,7 @@ function qs_theme_styles(){
         wp_register_style('production', CSS_INC . 'production.min.css', array(), NULL, 'all'); wp_enqueue_style('production');
     }
 }
-add_action('wp_enqueue_scripts', 'qs_theme_styles');
+
 
 // Load scripts
 function qs_theme_scripts() {
@@ -34,5 +34,3 @@ function qs_theme_scripts() {
     wp_localize_script( 'ajax_custom_script', 'ajaxurl', admin_url( 'admin-ajax.php' ));
     wp_enqueue_script( 'ajax_custom_script' );
 }
-
-add_action( 'wp_enqueue_scripts', 'qs_theme_scripts' );
