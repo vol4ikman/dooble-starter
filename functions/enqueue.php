@@ -23,6 +23,13 @@ function qs_theme_scripts() {
         wp_register_script( 'scripts', JS_INC . 'scripts.js', array( 'jquery' ), NULL, true );
 
         wp_enqueue_script( 'assets' );
+        
+        $site_settings = array(
+        	'home_url'  => get_home_url(),
+        	'theme_url' => THEME
+        );
+        wp_localize_script( 'scripts', 'site_settings', $site_settings );
+        
         wp_enqueue_script( 'scripts' );
 
     } else {
