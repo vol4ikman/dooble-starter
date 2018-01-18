@@ -29,8 +29,8 @@ Gulp deploy install all those plugins inside your theme folder
 5. `gulp-concat`: Concatenates files - <a href="https://www.npmjs.com/package/gulp-concat" >link</a>
 6. `gulp-notify`: Notifications - <a href="https://www.npmjs.com/package/gulp-notify">link</a>
 
-** Atom text editor <a href="https://atom.io/" target="_blank">(download here)</a> is very recommended =)
-If using atom, DO NOT forget setup "watcher" =)
+<p>** <strong>Atom text editor</strong> <a href="https://atom.io/" target="_blank">(download here)</a> is <strong>very</strong> recommended =)</p>
+<p>If using atom, DO NOT forget setup "watcher" (see "Default Watchers" section)</p>
 
 <hr>
 <h3>Default Watchers</h3>
