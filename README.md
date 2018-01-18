@@ -60,8 +60,10 @@ wp-config.php
 
 <hr>
 <h3>Important notice!!!</h3>
-- When you create .ftpconfig file, your "remote" parameter should looks like this `"remote": "/public_html",`
-- Do NOT upload to git wp-admin & wp-includes folders
+<ol>
+<li>When you create .ftpconfig file, your "remote" parameter should looks like this `"remote": "/public_html",`</li>
+<li>Do NOT upload to git wp-admin & wp-includes folders</li>
+</ol>
 
 <hr>
 <h3>Manifest JSON</h3>
