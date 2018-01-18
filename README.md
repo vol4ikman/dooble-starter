@@ -62,7 +62,7 @@ wp-config.php
 <h3>Important notice!!!</h3>
 <ol>
   <li>When you create .ftpconfig file, your "remote" parameter should looks like this <code>"remote": "/public_html",</code></li>
-<li>Do NOT upload to git wp-admin & wp-includes folders</li>
+  <li>Do NOT upload to git wp-admin & wp-includes folders</li>
 </ol>
 
 <hr>
