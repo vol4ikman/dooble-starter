@@ -36,12 +36,11 @@ If using atom, DO NOT forget setup "watcher" =)
 <h3>Default Watchers</h3>
 
 ```html
-"/public_html/wp-content/themes/gulp-starter/build/css/main-style.css",
-"/public_html/wp-content/themes/gulp-starter/build/css/responsive.css",
-"/public_html/wp-content/themes/gulp-starter/build/css/assets.css",
-"/public_html/wp-content/themes/gulp-starter/build/css/assets.min.css",
-"/public_html/wp-content/themes/gulp-starter/build/js/assets.js",
-"/public_html/wp-content/themes/gulp-starter/build/js/assets.min.js"
+"/wp-content/themes/THEMENAME/build/css/main-style.css",
+"/wp-content/themes/THEMENAME/build/css/assets.css",
+"/wp-content/themes/THEMENAME/build/css/assets.min.css",
+"/wp-content/themes/THEMENAME/build/js/assets.js",
+"/wp-content/themes/THEMENAME/build/js/assets.min.js"
 ```
 
 <h3>Default gitignore</h3>
