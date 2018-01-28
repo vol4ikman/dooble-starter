@@ -51,14 +51,16 @@ function qstheme_textdomain(){
 }
 
 if ( ! function_exists( 'add_body_class' ) ){
-    function add_body_class( $classes ) {
-        global $is_lynx, $is_gecko, $is_IE, $is_opera, $is_NS4, $is_safari, $is_chrome, $is_iphone;
+    function add_body_class( $classes ) {        
+	global $is_lynx, $is_gecko, $is_IE, $is_opera, $is_NS4, $is_safari, $is_chrome, $is_iphone, $is_winIE, $is_edge;
         if( $is_lynx ) $classes[] = 'lynx';
         elseif( $is_gecko ) $classes[] = 'firefox-gecko';
         elseif( $is_opera ) $classes[] = 'opera';
         elseif( $is_NS4 ) $classes[] = 'ns4';
         elseif( $is_safari ) $classes[] = 'safari';
         elseif( $is_chrome ) $classes[] = 'chrome';
+	elseif( $is_edge ) $classes[] = 'ms-edge';
+        elseif( $is_winIE ) $classes[] = 'ms-winIE';	    
         elseif( $is_IE ) {
             $classes[] = 'ie';
             if( preg_match( '/MSIE ( [0-11]+ )( [a-zA-Z0-9.]+ )/', $_SERVER['HTTP_USER_AGENT'], $browser_version ) )
