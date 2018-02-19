@@ -10,12 +10,8 @@ function register_modules(){
     global $active_modules;
 
     $active_modules = array(
-        'login' => array(
-
-        ),
-        // 'register' => array(
-        //
-        // )
+        //'login' => array(),
+        'sliderFactory' => array(),
     );
 
     return $active_modules;
@@ -54,5 +50,26 @@ function qs_get_module( $name ,$args = array() ){
 
         $module->view( $args );
 
+    }
+}
+
+/**
+ * if module exist return module
+ * if $save is true ( by default ) save the instance in query_var;
+ * @method qs_get_module_instance
+ * @param  [type]                 $module_name [ string of the module name ]
+ * @param  boolean                $save        [ save in query_var or not - default : true ]
+ * @return [type]                              [the module instance ]
+ */
+function qs_get_module_instance( $module_name , $save = true ){
+    if( $save && ! empty( $module = get_query_var( $module_name ) ) ){
+        return $module;
+    } else{
+        if( $module = qs_get_active_module( $module_name ) ){
+            if( $save ){
+                set_query_var( $module_name , $module );
+            }
+            return $module;
+        }
     }
 }
