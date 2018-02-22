@@ -111,19 +111,20 @@ function header_menu() {
 
 // get menu as array
 function qs_get_menu_items( $menu_name ){
-    $menu_items  = wp_get_nav_menu_items( $menu_name );
-    $menu_list   = array(); // returned array
-    $count       = 0;
-    $submenu     = false;
-    $current_id  = get_the_id();
+    $menu_items      = wp_get_nav_menu_items( $menu_name );
+    $menu_list       = array(); // returned array
+    $count           = 0;
+    $submenu         = false;
+    $current_page_id = get_the_id();
+    $current_id      = '';
     foreach( $menu_items as $current ){
-        if( $current_id == $current->object_id ){
+        if( $current_page_id == $current->object_id ){
             if ( ! $current->menu_item_parent ){
-                $current_id = $current->ID;
+                $current_page_id = $current->ID;
             } else{
-                $current_id = $current->menu_item_parent;
+                $current_page_id = $current->menu_item_parent;
             }
-            $cai = $current->ID;
+            $current_id = $current->ID;
             break;
         }
     }
@@ -137,11 +138,11 @@ function qs_get_menu_items( $menu_name ){
         $menu_list[$menu_item->ID]['object_id']   = $menu_item->object_id;
         $menu_list[$menu_item->ID]['object_type'] = $menu_item->object;
 
-        $menu_list[$menu_item->ID]['current_menu'] = $menu_item->ID == $cai ? 1 : 0;
+        $menu_list[$menu_item->ID]['current_menu'] = $menu_item->ID == $current_id ? 1 : 0;
 
         if ( ! $menu_item->menu_item_parent ) {
             $parent_id = $menu_item->ID;
-            $menu_list[$menu_item->ID]['current_item'] = $parent_id == $current_id ? 1 : 0;
+            $menu_list[$menu_item->ID]['current_item'] = $parent_id == $current_page_id ? 1 : 0;
             // checking if has child
             if( ! empty( $menu_items[$count + 1] ) && $menu_items[ $count + 1 ]->menu_item_parent == $parent_id ){
                 $menu_list[$menu_item->ID]['has_child'] = 1;
