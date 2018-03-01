@@ -110,62 +110,43 @@ function header_menu() {
 }
 
 // get menu as array
-function qs_get_menu_items( $menu_name ){
-    $menu_items      = wp_get_nav_menu_items( $menu_name );
-    $menu_list       = array(); // returned array
-    $count           = 0;
-    $submenu         = false;
-    $current_page_id = get_the_id();
-    $current_id      = '';
-    foreach( $menu_items as $current ){
-        if( $current_page_id == $current->object_id ){
-            if ( ! $current->menu_item_parent ){
-                $current_page_id = $current->ID;
-            } else{
-                $current_page_id = $current->menu_item_parent;
-            }
-            $current_id = $current->ID;
-            break;
+function qs_get_menu_items( $menu ){
+    $menu_list = array(); // returned array
+    if( is_numeric( $menu ) ){
+        $menu_id = $menu;
+    } elseif ( ( $locations = get_nav_menu_locations() ) && isset( $locations[ $menu ] ) ) {
+        $menu_id              = get_term( $locations[ $menu ] );
+    }
+    $menu_items        = wp_get_nav_menu_items( $menu_id );
+    $count             = 0;
+    $current_page_id   = get_the_id();
+    $current_parent_id = '';
+
+    foreach( $menu_items as $menu_key => $menu_item ) {
+        $menu_list[$menu_item->ID]['ID']           = $menu_item->ID;
+        $menu_list[$menu_item->ID]['name']         = $menu_item->title;
+        $menu_list[$menu_item->ID]['link']         = $menu_item->url;
+        $menu_list[$menu_item->ID]['object_id']    = $menu_item->object_id;
+        $menu_list[$menu_item->ID]['object_type']  = $menu_item->object;
+        $menu_list[$menu_item->ID]['parent']       = $menu_item->menu_item_parent;
+        $menu_list[$menu_item->ID]['class']        = implode( ' ' , $menu_item->classes );
+        $menu_list[$menu_item->ID]['has_child']    = ( isset( $menu_items[ $menu_key + 1 ] ) &&  $menu_items[ $menu_key + 1 ]->menu_item_parent == $menu_item->ID ) ? 1 : 0;
+        $menu_list[$menu_item->ID]['current_menu'] = $menu_item->ID == $current_page_id ? 1 : 0;
+
+        if( ! $menu_list[$menu_item->ID]['has_child'] ){
+            unset( $menu_items[ $menu_key ] ); // Remove from the main nav list the items without children for efficiency algoritem
         }
     }
-    foreach( $menu_items as $menu_item ) {
-        $link  = $menu_item->url;
-        $title = $menu_item->title;
-
-        $menu_list[$menu_item->ID]['ID']          = $menu_item->ID;
-        $menu_list[$menu_item->ID]['name']        = $title;
-        $menu_list[$menu_item->ID]['link']        = $link;
-        $menu_list[$menu_item->ID]['object_id']   = $menu_item->object_id;
-        $menu_list[$menu_item->ID]['object_type'] = $menu_item->object;
-
-        $menu_list[$menu_item->ID]['current_menu'] = $menu_item->ID == $current_id ? 1 : 0;
-
-        if ( ! $menu_item->menu_item_parent ) {
-            $parent_id = $menu_item->ID;
-            $menu_list[$menu_item->ID]['current_item'] = $parent_id == $current_page_id ? 1 : 0;
-            // checking if has child
-            if( ! empty( $menu_items[$count + 1] ) && $menu_items[ $count + 1 ]->menu_item_parent == $parent_id ){
-                $menu_list[$menu_item->ID]['has_child'] = 1;
-            }else{
-                $menu_list[$menu_item->ID]['has_child'] = 0;
-            }
-
-        }
-        if ( $parent_id == $menu_item->menu_item_parent ) {
-            if ( ! $submenu ) {
-                $submenu = true;
-                $menu_list[$parent_id]['childs'] = array();
-            }
-            $menu_list[$parent_id]['childs'][] = $menu_list[$menu_item->ID]; // move data to parents childrens
-            unset( $menu_list[ $menu_item->ID ] ); // remove child from root array
-            if( empty( $menu_items[$count + 1] ) || $menu_items[ $count + 1 ]->menu_item_parent != $parent_id && $submenu ){
-                $submenu = false;
+    foreach( $menu_items as $menu_key => $menu_item ) {
+        foreach ( $menu_list as $menu_key => $menu_list_item ) {
+            if( $menu_item->ID == $menu_list_item['parent'] ){ // parent found
+                if( $menu_list_item['current_menu'] ){
+                    $menu_list[ $menu_item->ID ]['current_menu_child'] = 1;
+                }
+                $menu_list[ $menu_item->ID ]['childs'][] = $menu_list_item;
+                unset( $menu_list[ $menu_key ] );
             }
         }
-        if ( empty( $menu_items[$count + 1] ) || $menu_items[ $count + 1 ]->menu_item_parent != $parent_id ) {
-            $submenu = false;
-        }
-        $count++;
     }
     return $menu_list;
 }
