@@ -150,3 +150,15 @@ function qs_get_menu_items( $menu ){
     }
     return $menu_list;
 }
+
+function limit( $content , $limit = 20) {
+    $content = explode(' ', $content, $limit);
+    if (count($content) >= $limit) {
+        array_pop($content);
+        $content = implode(" ",$content).'...';
+    } else {
+        $content = implode(" ",$content);
+    }
+    $content = preg_replace('`[[^]]*]`','',$content);
+    return $content;
+}
