@@ -8,7 +8,7 @@
 `npm install gulp -g`
 4. Upload <a href="https://gist.github.com/vol4ikman/92e381e5adee0b1e36606d82d5f45613" target="_blank">this gulpfile.js</a> to your ftp server into public_html directory (and DO NOT forget change default settings)
 5. From public_html run this command:<br>
-`npm install gulp gulp-decompress gulp-download gulp-util vinyl-ftp del gulp-open gulp-run`
+`npm install gulp gulp-decompress gulp-download vinyl-ftp del gulp-open gulp-run`
 6. After install gulp plugins run this command:<br>
 `gulp deploy`
 7. Run this command from the root of your WordPress theme (/public_html/wp-content/themes/$theme_name$/): <br>
