@@ -35,6 +35,7 @@ var source_scripts = [
     framework_js,
     './assets/js/device.min.js',
     './assets/js/magnific.js',
+    //'./assets/js/select2.js'
     './assets/js/slick.min.js',
     './assets/js/functions.js'
 ];
@@ -53,6 +54,7 @@ var source_styles = [
     './assets/css/normalize.css',
     framework_css,
     './assets/css/animate.css',
+    //'./assets/css/select2.css',
     './assets/css/magnific.css',
     './assets/css/slick.css'
 ];
