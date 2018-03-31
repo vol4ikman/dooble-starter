@@ -50,6 +50,7 @@ gulp.task('js', function() {
 });
 
 var source_styles = [
+    './fonts/font-awesome-4.7.0/css/font-awesome.min.css',
     './assets/css/normalize.css',
     framework_css,
     './assets/css/animate.css',

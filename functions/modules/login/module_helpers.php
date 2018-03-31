@@ -1,5 +1,5 @@
-<?php
-
-class QSloginModuleHelper extends QSmoduleBaseHelper{
-
-}
+<?php
+
+class QSloginModuleHelper extends QSmoduleBaseHelper{
+
+}

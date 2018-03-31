@@ -1,5 +1,5 @@
-<?php
-
-abstract class QSmoduleBaseHelper{
-
-}
+<?php
+
+abstract class QSmoduleBaseHelper{
+
+}

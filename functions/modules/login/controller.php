@@ -1,6 +1,6 @@
-<?php
-
-
-class QSloginController{
-
-}
+<?php
+
+
+class QSloginController{
+
+}
