@@ -35,8 +35,8 @@ var source_scripts = [
     framework_js,
     './assets/js/device.min.js',
     './assets/js/magnific.js',
-    './assets/js/slick.min.js',
-    './assets/js/functions.js'
+    './assets/js/select2.js',
+    './assets/js/slick.min.js'
 ];
 
 gulp.task('js', function() {
@@ -53,6 +53,7 @@ var source_styles = [
     './fonts/font-awesome-4.7.0/css/font-awesome.min.css',
     './assets/css/normalize.css',
     framework_css,
+    './assets/css/select2.css',
     './assets/css/animate.css',
     './assets/css/magnific.css',
     './assets/css/slick.css'
