@@ -47,8 +47,7 @@ function gulp_starter_register_required_plugins() {
 		),
 		array(
 			'name'		=> 'ACF User Role Field Setting',
-			'slug'		=> 'acf-user-role-field-setting',	// The plugin slug (typically the folder name)
-			'source'             => get_template_directory() . '/functions/tgm/plugins/acf-user-role-field-setting.zip', // The plugin source.
+			'slug'		=> 'user-role-field-setting-for-acf',	// The plugin slug (typically the folder name)			
 			'required'	=> false
 		),		
 		array(
