@@ -46,6 +46,12 @@ function gulp_starter_register_required_plugins() {
 			'required'           => true,
 		),
 		array(
+			'name'		=> 'ACF User Role Field Setting',
+			'slug'		=> 'acf-user-role-field-setting',	// The plugin slug (typically the folder name)
+			'source'             => get_template_directory() . '/functions/tgm/plugins/acf-user-role-field-setting.zip', // The plugin source.
+			'required'	=> false
+		),		
+		array(
 			'name'	   => 'Contact Form 7',
 			'slug'	   => 'contact-form-7',
 			'required' => true,
@@ -84,7 +90,7 @@ function gulp_starter_register_required_plugins() {
 			'name'		=> 'ACF Nav Menu',
 			'slug'		=> 'advanced-custom-fields-nav-menu-field',
 			'required'	=> false
-		)
+		)				
 
 	);
 
