@@ -33,7 +33,6 @@ gulp.task('default', function(){
 
 var source_scripts = [
     framework_js,
-    './assets/js/device.min.js',
     './assets/js/magnific.js',
     //'./assets/js/select2.js'
     './assets/js/slick.min.js',
