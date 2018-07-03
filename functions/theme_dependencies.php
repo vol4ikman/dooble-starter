@@ -1,5 +1,4 @@
 <?php
-
 /*****************************************
 **  Includes
 ****************************************/
@@ -28,3 +27,8 @@ if ( defined( 'QS_API_ENDPOINT' ) && QS_API_ENDPOINT ){ // <==== currently on be
 
 get_template_part( 'admin/options' );
 get_template_part( 'admin/types' );
+
+/*******************
+    Logger
+*******************/
+get_template_part( 'admin/classes/class-logger' );
