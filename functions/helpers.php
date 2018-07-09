@@ -81,9 +81,13 @@ if ( ! function_exists( 'add_body_class' ) ){
         if (defined('ENV')){
             $classes[] = 'env-'.ENV;
         }
-	if ( class_exists( 'WooCommerce' ) ) {
-	    $classes[] = 'woo-is-on';
-	}
+		if ( class_exists( 'WooCommerce' ) ) {
+			$classes[] = 'woo-is-on';
+		}
+		if( ! is_user_logged_in() ){
+			$classes[] = 'logged-out';
+		}		
+	 
         return $classes;
     }
 
