@@ -45,6 +45,19 @@ function gulp_starter_register_required_plugins() {
 			'source'             => get_template_directory() . '/functions/tgm/plugins/advanced-custom-fields-pro.zip', // The plugin source.
 			'required'           => true,
 		),
+		// wp-rocket
+		array(
+			'name'               => 'Advanced custom fields Pro', // The plugin name.
+			'slug'               => 'advanced-custom-fields-pro', // The plugin slug (typically the folder name).
+			'source'             => get_template_directory() . '/functions/tgm/plugins/wp-rocket.zip', // The plugin source.
+			'required'           => false,
+		),
+		// wordfence
+		array(
+			'name'		=> 'Wordfence',
+			'slug'		=> 'wordfence',	// The plugin slug (typically the folder name)			
+			'required'	=> false
+		),			
 		array(
 			'name'		=> 'ACF User Role Field Setting',
 			'slug'		=> 'user-role-field-setting-for-acf',	// The plugin slug (typically the folder name)			
