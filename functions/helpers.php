@@ -118,3 +118,8 @@ $role_object = get_role( 'editor' );
 
 // add $cap capability to this role object
 $role_object->add_cap( 'edit_theme_options' );
+
+// HTML Email
+function qsemail_set_content_type(){
+	return "text/html";
+}
