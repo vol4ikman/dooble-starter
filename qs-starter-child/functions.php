@@ -1,2 +1,3 @@
 <?php
-get_template_part('functions/enqueue');
+
+get_template_part('functions/enqueue_child');

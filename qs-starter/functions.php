@@ -15,8 +15,8 @@ if (function_exists('add_theme_support')){
     add_image_size('large', 1000, '', true);
     add_image_size('medium', 450, '', true);
     add_image_size('small', 250, '', true);
-    // Theme Support fot yoast 
-    add_theme_support( 'title-tag' );    
+    // Theme Support fot yoast
+    add_theme_support( 'title-tag' );
     // Enables post and comment RSS feed links to head
     add_theme_support('automatic-feed-links');
     // Enable support for wp galleries with figure tag
