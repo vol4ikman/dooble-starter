@@ -59,6 +59,11 @@ function gulp_starter_register_required_plugins() {
 			'required'	=> true
 		),
 		array(
+			'name'		=> 'Markup (JSON-LD) structured in schema.org',
+			'slug'		=> 'wp-structuring-markup',	// The plugin slug (typically the folder name)
+			'required'	=> true
+		),
+		array(
 			'name'		=> 'ACF User Role Field Setting',
 			'slug'		=> 'user-role-field-setting-for-acf',	// The plugin slug (typically the folder name)
 			'required'	=> false
