@@ -65,6 +65,7 @@ wp-config.php
     <li>Slick slider has been droped from the theme</li>
     <li>Add support to Polylang plugin (https://wordpress.org/plugins/polylang/) to save ACF options correctly</li>
 </ol>
+
 <hr>
 <h3>Important notice</h3>
 <ol>
