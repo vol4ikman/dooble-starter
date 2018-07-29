@@ -58,12 +58,16 @@ wp-config.php
 ```
 
 <hr>
-<h3>Important notice & Change Log</h3>
-<h5>Please read it =)</h5>
+<h3>Change Log</h3>
 <ol>
     <li>Child theme has been added to QS Starter Theme</li>
     <li>Theme has been moved to SWIPER Slider - http://idangero.us/swiper/get-started/</li>
     <li>Slick slider has been droped from the theme</li>
+    <li>Add support to Polylang plugin (https://wordpress.org/plugins/polylang/) to save ACF options correctly</li>
+</ol>
+<hr>
+<h3>Important notice</h3>
+<ol>
     <li><strong>Please, remove .ftpconfig file from the server - very important</strong></li>
     <li>When you create .ftpconfig file, your "remote" parameter should looks like this <code>"remote": "/public_html",</code></li>
     <li>Do NOT upload to git wp-admin & wp-includes folders</li>

@@ -1,4 +1,9 @@
 <?php
+// If Polylang is installed
+if( function_exists ( 'pll_the_languages' ) ){
+    get_template_part( 'functions/polylang-acf' );
+}
+
 if( function_exists('acf_add_options_page') ) {
 
     acf_add_options_page(array(
