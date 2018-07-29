@@ -38,3 +38,6 @@ remove_filter( 'the_excerpt' , 'wpautop' ); // Remove <p> tags from Excerpt alto
 
 add_action('wp_enqueue_scripts', 'qs_theme_styles');
 add_action( 'wp_enqueue_scripts', 'qs_theme_scripts' );
+
+// HTML Email
+add_filter( 'wp_mail_content_type','qsemail_set_content_type' );
