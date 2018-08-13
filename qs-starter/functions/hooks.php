@@ -9,7 +9,7 @@ add_action('acf/init', 'google_api_acf_init');
 add_action('wp_head', 'qs_add_header_scripts');
 add_action('wp_footer', 'qs_add_footer_scripts', 100);
 // Add Theme Stylesheet To ADMIN
-add_action( 'admin_enqueue_scripts', 'qs_admin_theme_styles' );
+add_action( 'admin_enqueue_scripts', 'qs_load_custom_admin_style' );
 // Register THEME Navigation
 add_action('init', 'register_theme_menus');
 
