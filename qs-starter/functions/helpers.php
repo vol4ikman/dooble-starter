@@ -92,10 +92,7 @@ if ( ! function_exists( 'add_body_class' ) ){
     }
 
 }
-function qs_admin_theme_styles(){
-    wp_register_style( 'admin-style', THEME . '/admin/css/style.css', array(), NULL, 'all' );
-    wp_enqueue_style( 'admin-style' );
-}
+
 function register_theme_menus() {
     register_nav_menus(array(
         'header-menu' => __('Header Menu', 'qstheme'), // Main Navigation
