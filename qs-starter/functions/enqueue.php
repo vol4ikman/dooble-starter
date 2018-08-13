@@ -41,3 +41,12 @@ function qs_theme_scripts() {
     wp_localize_script( 'ajax_custom_script', 'ajaxurl', admin_url( 'admin-ajax.php' ));
     wp_enqueue_script( 'ajax_custom_script' );
 }
+
+function qs_load_custom_admin_style() {
+        wp_register_style( 'qs-admin-style', get_template_directory_uri() . '/admin/css/admin-style.css', false, '1.0.0' );
+        wp_register_script( 'qs-admin-script', get_template_directory_uri() . '/admin/js/admin-script.js', array( 'jquery' ), NULL, true );
+    
+        wp_enqueue_style( 'qs-admin-style' );
+        wp_enqueue_script( 'qs-admin-script' );
+}
+
