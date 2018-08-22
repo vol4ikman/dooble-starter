@@ -36,11 +36,16 @@ Gulp deploy install all those plugins inside your theme folder
 <h3>Default Watchers</h3>
 
 ```html
-"/wp-content/themes/CHILDTHEME/build/css/main-style.css",
-"/wp-content/themes/CHILDTHEME/build/css/assets.css",
-"/wp-content/themes/CHILDTHEME/build/css/assets.min.css",
-"/wp-content/themes/CHILDTHEME/build/js/assets.js",
-"/wp-content/themes/CHILDTHEME/build/js/assets.min.js"
+        "/wp-content/themes/qs-starter/build/css/assets.css",
+        "/wp-content/themes/qs-starter/build/css/assets.min.css",
+        "/wp-content/themes/qs-starter/build/css/main-style.css",
+        "/wp-content/themes/qs-starter/build/css/responsive.css",
+        "/wp-content/themes/qs-starter/build/js/assets.min.js",
+        "/wp-content/themes/qs-starter-child/build/css/main-style-child-rtl.css",
+        "/wp-content/themes/qs-starter-child/build/css/main-style-child.css",
+        "/wp-content/themes/qs-starter-child/build/css/responsive-child.css",
+        "/wp-content/themes/qs-starter-child/build/js/scripts-child.js",
+        "/wp-content/themes/qs-starter-child/build/js/assets.min.js"
 ```
 
 <h3>Default gitignore</h3>
