@@ -8,6 +8,9 @@ define('ENV', 'dev');
 if( ! defined( 'THEME' ) ){
     define( 'THEME' , get_template_directory_uri());
 }
+if( ! defined( 'CHILD_THEME' ) ){
+   define( 'CHILD_THEME' , get_stylesheet_directory_uri());
+}
 define('CSS_INC', THEME.'/build/css/');
 define('JS_INC', THEME.'/build/js/');
 define('CSS_ASSETS_INC', THEME.'/assets/css/');
