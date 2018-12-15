@@ -1,5 +1,5 @@
 // Run this command first:
-// npm install gulp gulp-uglify gulp-rename gulp-clean-css gulp-autoprefixer gulp-concat gulp-rtlcss gulp-notify
+// npm install gulp@3.9.2 gulp-uglify gulp-rename gulp-clean-css gulp-autoprefixer gulp-concat gulp-rtlcss gulp-notify
 
 var gulp         = require('gulp'),
     uglify       = require('gulp-uglify'),
