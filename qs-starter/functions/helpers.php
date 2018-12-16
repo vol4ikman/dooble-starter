@@ -134,3 +134,10 @@ function isPartUppercase() {
     return false;
 }
 isPartUppercase();
+
+// remove visual composer shortcode from content
+// for example on search results or custom page template
+function remove_vc_shortcodes_from_content( $excerpt ) {
+	$excerpt = preg_replace('/\[\/?vc_.*?\]/', '', $excerpt);
+	echo $excerpt;
+}
