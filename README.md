@@ -6,6 +6,7 @@
 2. Gulp JS - <a href="http://gulpjs.com/" target="_blank">Get GulpJS</a>
 3. Gulp must be installed globally on your system:<br>
 `npm install gulp -g`
+<br>
 `npm install gulpjs/gulp-cli -g`
 4. Upload <a href="https://gist.github.com/vol4ikman/92e381e5adee0b1e36606d82d5f45613" target="_blank">this gulpfile.js</a> to your ftp server into public_html directory (and DO NOT forget change default settings)
 5. From public_html run this command:<br>
