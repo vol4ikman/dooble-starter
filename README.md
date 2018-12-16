@@ -2,18 +2,18 @@
 
 <h3>Requirements</h3>
 
-1. Node JS - <a href="https://nodejs.org/en/" target="_blank">Get NodeJS</a>
-2. Gulp JS - <a href="http://gulpjs.com/" target="_blank">Get GulpJS</a>
-3. Gulp must be installed globally on your system:<br>
+<p>1. Node JS - <a href="https://nodejs.org/en/" target="_blank">Get NodeJS</a></p>
+<p>2. Gulp JS - <a href="http://gulpjs.com/" target="_blank">Get GulpJS</a></p>
+<p>3. Gulp must be installed globally on your system:</p>
 <p><code>npm install gulp -g</code></p>
 <p><code>npm install gulpjs/gulp-cli -g</code></p>
-4. Upload <a href="https://gist.github.com/vol4ikman/92e381e5adee0b1e36606d82d5f45613" target="_blank">this gulpfile.js</a> to your ftp server into public_html directory (and DO NOT forget change default settings)
-5. From public_html run this command:<br>
-`npm install gulp-uglify gulp-rename gulp-clean-css gulp-autoprefixer gulp-concat gulp-rtlcss gulp-notify`
-6. After install gulp plugins run this command:<br>
-`gulp deploy`
-7. Run this command from the root of your WordPress theme (/public_html/wp-content/themes/$theme_name$/): <br>
-`gulp dev`
+<p>4. Upload <a href="https://gist.github.com/vol4ikman/92e381e5adee0b1e36606d82d5f45613" target="_blank">this gulpfile.js</a> to your ftp server into public_html directory (and DO NOT forget change default settings)</p>
+<p>5. From public_html run this command:</p>
+<p><code>npm install gulp-uglify gulp-rename gulp-clean-css gulp-autoprefixer gulp-concat gulp-rtlcss gulp-notify</code></p>
+<p>6. After install gulp plugins run this command:</p>
+<p><code>gulp deploy</code></p>
+<p>7. Run this command from the root of your WordPress theme (/public_html/wp-content/themes/$theme_name$/): </p>
+<p><code>gulp dev</code></p>
 
 
 <hr>
