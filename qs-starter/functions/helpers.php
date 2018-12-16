@@ -120,3 +120,17 @@ $role_object->add_cap( 'edit_theme_options' );
 function qsemail_set_content_type(){
 	return "text/html";
 }
+
+// Fix url uppercase urls
+function isPartUppercase() {
+    $url = $_SERVER['REQUEST_URI'];
+    if(!strpos($_SERVER['REQUEST_URI'], '%')){
+        return;
+    }
+
+    if(preg_match("/[A-Z]/", $url)) {
+        $_SERVER['REQUEST_URI'] = strtolower($url);
+    }
+    return false;
+}
+isPartUppercase();
