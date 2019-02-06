@@ -58,8 +58,7 @@
 					<button type="button" class="button" data-toggle="offCanvas<?php echo FLOAT;?>">Open Menu</button>
 				
 					<div class="logo">
-						<a href="<?php echo home_url(); ?>" role="logo">
-						</a>
+						<a href="<?php echo home_url(); ?>" role="logo">LOGO placeholder</a>
 					</div>
 					
 					<nav class="nav" role="navigation">
