@@ -2,6 +2,7 @@
 
 // Run this command first:
 // npm install gulp -g
+// npm install gulp
 // npm install gulpjs/gulp-cli -g
 // npm install gulp-uglify gulp-rename gulp-clean-css gulp-autoprefixer gulp-concat gulp-rtlcss gulp-notify
 
