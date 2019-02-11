@@ -10,12 +10,12 @@
 <p>4. Upload <a href="https://gist.github.com/vol4ikman/92e381e5adee0b1e36606d82d5f45613" target="_blank">this gulpfile.js</a> to your ftp server into public_html directory (and DO NOT forget change default settings)</p>
 <p>5. From public_html run this command:</p>
 <p><code>NEW : npm install gulp@3.9.1 gulp-decompress gulp-download vinyl-ftp del gulp-open gulp-run</code></p>
-<p><code>OLD : npm install gulp-uglify gulp-rename gulp-clean-css gulp-autoprefixer gulp-concat gulp-rtlcss gulp-notify</code></p>
 <p>6. After install gulp plugins run this command:</p>
 <p><code>gulp deploy</code></p>
-<p>7. Run this command from the root of your WordPress theme (/public_html/wp-content/themes/$theme_name$/): </p>
-<p><code>gulp dev</code></p>
 
+<p>7. Run this command from the root of your WordPress theme (/public_html/wp-content/themes/$theme_name$/): </p>
+<p><code>npm install gulp-uglify gulp-rename gulp-clean-css gulp-autoprefixer gulp-concat gulp-rtlcss gulp-notify</code></p>
+<p><code>gulp dev</code></p>
 
 <hr>
 <h3>Explanation</h3>
