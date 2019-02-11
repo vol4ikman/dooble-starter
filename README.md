@@ -9,7 +9,7 @@
 <p><code>npm install gulpjs/gulp-cli -g</code></p>
 <p>4. Upload <a href="https://gist.github.com/vol4ikman/92e381e5adee0b1e36606d82d5f45613" target="_blank">this gulpfile.js</a> to your ftp server into public_html directory (and DO NOT forget change default settings)</p>
 <p>5. From public_html run this command:</p>
-<p><code>NEW : npm install gulp@3.9.1 gulp-decompress gulp-download vinyl-ftp del gulp-open gulp-run</code></p>
+<p><code>npm install gulp@3.9.1 gulp-decompress gulp-download vinyl-ftp del gulp-open gulp-run</code></p>
 <p>6. After install gulp plugins run this command:</p>
 <p><code>gulp deploy</code></p>
 
@@ -41,10 +41,17 @@ Gulp deploy install all those plugins inside your theme folder
         "/wp-content/themes/qs-starter/build/css/assets.min.css",
         "/wp-content/themes/qs-starter/build/css/main-style.css",
         "/wp-content/themes/qs-starter/build/css/responsive.css",
+        "/wp-content/themes/qs-starter/build/css/assets.cs.maps",
+        "/wp-content/themes/qs-starter/build/css/assets.min.css.map",
+        "/wp-content/themes/qs-starter/build/css/main-style.css.map",
+        "/wp-content/themes/qs-starter/build/css/responsive.css.map",
         "/wp-content/themes/qs-starter/build/js/assets.min.js",
         "/wp-content/themes/qs-starter-child/build/css/main-style-child-rtl.css",
         "/wp-content/themes/qs-starter-child/build/css/main-style-child.css",
         "/wp-content/themes/qs-starter-child/build/css/responsive-child.css",
+        "/wp-content/themes/qs-starter-child/build/css/main-style-child-rtl.css.map",
+        "/wp-content/themes/qs-starter-child/build/css/main-style-child.css.map",
+        "/wp-content/themes/qs-starter-child/build/css/responsive-child.css.map",
         "/wp-content/themes/qs-starter-child/build/js/scripts-child.js",
         "/wp-content/themes/qs-starter-child/build/js/assets.min.js"
 ```
