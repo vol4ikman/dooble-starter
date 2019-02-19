@@ -3,6 +3,11 @@
 @import 'vars';
 @import 'mixins';
 
+// https://css-tricks.com/snippets/css/less-mixin-for-rem-font-sizing/
+html {
+  font-size: 62.5%; /* Sets up the Base 10 stuff */
+}
+
 /**************************
     WP Galleries
 **************************/
