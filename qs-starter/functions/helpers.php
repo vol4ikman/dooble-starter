@@ -141,3 +141,8 @@ function remove_vc_shortcodes_from_content( $excerpt ) {
 	$excerpt = preg_replace('/\[\/?vc_.*?\]/', '', $excerpt);
 	echo $excerpt;
 }
+// Locate function definition
+function get_function_location( $function_name ){
+   $reflFunc = new ReflectionFunction( $function_name );
+   print $reflFunc->getFileName() . ':' . $reflFunc->getStartLine();
+}
