@@ -15,6 +15,7 @@
 
 <p>7. Run this command from the root of your WordPress theme (/public_html/wp-content/themes/$theme_name$/): </p>
 <p><code>npm install gulp-uglify gulp-rename gulp-clean-css gulp-autoprefixer gulp-concat gulp-rtlcss gulp-notify</code></p>
+<p><code>npm install gulp</code></p>
 <p><code>gulp dev</code></p>
 
 <hr>
