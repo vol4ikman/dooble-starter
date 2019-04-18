@@ -146,3 +146,31 @@ function get_function_location( $function_name ){
    $reflFunc = new ReflectionFunction( $function_name );
    print $reflFunc->getFileName() . ':' . $reflFunc->getStartLine();
 }
+
+add_action( 'wp_footer', 'qs_list_hooks_filters' );
+function qs_list_hooks_filters(){
+
+   if( ! defined('WP_DEBUG') || ! WP_DEBUG || ! current_user_can('administrator')){
+       return;
+   }
+   global $wp_filter;
+
+   $comment_filters = array ();
+   $h1  = '<h1>Current Filters list:</h1>';
+   $out = '';
+   $toc = '<ul>';
+
+   foreach ( $wp_filter as $key => $val ) {
+       if ( FALSE !== strpos( $key, 'comment' ) )
+       {
+           $comment_filters[$key][] = var_export( $val, TRUE );
+       }
+   }
+
+   foreach ( $comment_filters as $name => $arr_vals ) {
+       $out .= "<h2 id=$name>$name</h2><pre>" . implode( "\n\n", $arr_vals ) . '</pre>';
+       $toc .= "<li><a href='#$name'>$name</a></li>";
+   }
+
+   print "<pre style='direction:ltr; text-align:left;'>$h1$toc</ul>$out</pre>";
+}
