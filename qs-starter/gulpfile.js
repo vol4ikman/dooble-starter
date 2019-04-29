@@ -29,13 +29,17 @@ if( framework == 'foundation' ) {
     var framework_css = './assets/' + framework + '/css/bootstrap.min.css';
 }
 
-/****************************
+/****************************************************************
     JS Libraries
-****************************/
+    1. https://dimsemenov.com/plugins/magnific-popup/
+    2. https://idangero.us/swiper/
+    3. http://grsmto.github.io/simplebar/    
+****************************************************************/
 var source_scripts = [
     framework_js,
     './assets/js/magnific.js',
     './assets/js/swiper.min.js',
+    './assets/js/simplebar.min.js',
     './assets/js/functions.js'
 ];
 
@@ -57,6 +61,7 @@ var source_styles = [
     framework_css,
     './assets/css/animate.css',
     './assets/css/magnific.css',
+    './assets/css/simplebar.css',
     './assets/css/swiper.min.css'
 ];
 
