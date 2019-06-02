@@ -147,7 +147,8 @@ function get_function_location( $function_name ){
    print $reflFunc->getFileName() . ':' . $reflFunc->getStartLine();
 }
 
-add_action( 'wp_footer', 'qs_list_hooks_filters' );
+/** Display hooks list **/
+//add_action( 'wp_footer', 'qs_list_hooks_filters' );
 function qs_list_hooks_filters(){
 
    if( ! defined('WP_DEBUG') || ! WP_DEBUG || ! current_user_can('administrator')){
