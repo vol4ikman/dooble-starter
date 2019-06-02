@@ -33,13 +33,15 @@ if( framework == 'foundation' ) {
     JS Libraries
     1. https://dimsemenov.com/plugins/magnific-popup/
     2. https://idangero.us/swiper/
-    3. http://grsmto.github.io/simplebar/    
+    3. http://grsmto.github.io/simplebar/  
+    4. http://malsup.com/jquery/block/#overview
 ****************************************************************/
 var source_scripts = [
     framework_js,
     './assets/js/magnific.js',
     './assets/js/swiper.min.js',
     './assets/js/simplebar.min.js',
+    './assets/js/jquery.blockUI.js',
     './assets/js/functions.js'
 ];
 
