@@ -175,3 +175,19 @@ function qs_list_hooks_filters(){
 
    print "<pre style='direction:ltr; text-align:left;'>$h1$toc</ul>$out</pre>";
 }
+
+/**
+ * [convert_gregorian_date_to_jewesh]
+ * @param  [type] $date [date with 3 part format]
+ * @return [type]       [description]
+ */
+function convert_gregorian_date_to_jewesh( $date ) {
+    if( $date ) {
+        $date_exploded          = explode( '.', $date);
+        $jewish_date_convertion = gregoriantojd( $date_exploded[1], $date_exploded[0], $date_exploded[2] );
+        $jewish_date            = jdtojewish($jewish_date_convertion, true, CAL_JEWISH_ADD_GERESHAYIM);
+        $jewish_date_utf        = iconv( 'WINDOWS-1255', 'UTF-8', $jewish_date );
+
+        return $jewish_date_utf;
+    }
+}  
