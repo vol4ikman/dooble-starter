@@ -1,0 +1,41 @@
+// https://css-tricks.com/snippets/css/less-mixin-for-rem-font-sizing/
+html {
+  font-size: 62.5%; /* Sets up the Base 10 stuff */
+}
+
+/**************************
+    WP Galleries
+**************************/
+.modules-test{
+    .module-wrap {
+        background: #e6e2e2;
+        padding: 0 20px;
+        border: 1px solid #ccc;
+    }
+}
+
+.gallery-columns-2 {
+    display: inline-block;
+    width: 100%;
+    clear: both;
+    .gallery-item {
+        width: 48%;
+        float: right;
+        margin-left:2%;
+        margin-bottom: 10px;
+        &:nth-child(2){
+            margin-left:0;
+            float: left;
+        }
+        .gallery-icon {
+            margin-bottom: 10px;
+        }
+        .gallery-caption {
+            font-size: 14px;
+            margin-bottom: 0;
+            color: #666;
+            line-height: 26px;
+            padding: 0;
+        }
+    }
+}
