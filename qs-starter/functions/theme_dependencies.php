@@ -9,6 +9,7 @@ get_template_part( 'functions/functions' );
 get_template_part( 'functions/ajax' );
 get_template_part( 'functions/helpers' );
 get_template_part( 'functions/tgm' );
+
 // CF7 Cities list tag
 //get_template_part( 'functions/cf7-cities' );
 
@@ -16,7 +17,11 @@ get_template_part( 'functions/classes/class.admin-notices' );
 get_template_part( 'functions/classes/class.base-module' );
 get_template_part( 'functions/classes/class.base-module-helper' );
 
+// Modules
 get_template_part( 'functions/modules/init' );
+
+// Plugins
+get_template_part('inc/plugins/user-switching/user-switching');
 
 if ( class_exists( 'WooCommerce' ) ) {
     get_template_part( 'functions/woocommerce' );
