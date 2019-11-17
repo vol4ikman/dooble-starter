@@ -34,6 +34,8 @@
 </head>
 <body <?php body_class(); ?>>
 		
+<?php wp_body_open(); ?>
+	
 <div class="off-canvas-wrapper">
 
 	<div class="off-canvas position-<?php echo FLOAT;?>" id="offCanvas<?php echo FLOAT;?>" data-off-canvas>
