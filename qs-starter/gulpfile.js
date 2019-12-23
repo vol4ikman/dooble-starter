@@ -74,7 +74,7 @@ function styles() {
         .pipe(rename('assets.min.css'))                    // rename it
         .pipe(cleanCSS())                                  // minify css
         .pipe(autoprefixer({
-            browsers: ['last 2 versions'],
+            overrideBrowserslist: ["defaults"],
             cascade: false
         }))
         .pipe(gulp.dest('./build/css/'))                    // move it again to build/clean/ directory
