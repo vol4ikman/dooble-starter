@@ -46,15 +46,7 @@ Gulp deploy install all those plugins inside your theme folder
         "/wp-content/themes/qs-starter/build/css/assets.min.css.map",
         "/wp-content/themes/qs-starter/build/css/main-style.css.map",
         "/wp-content/themes/qs-starter/build/css/responsive.css.map",
-        "/wp-content/themes/qs-starter/build/js/assets.min.js",
-        "/wp-content/themes/qs-starter-child/build/css/main-style-child-rtl.css",
-        "/wp-content/themes/qs-starter-child/build/css/main-style-child.css",
-        "/wp-content/themes/qs-starter-child/build/css/responsive-child.css",
-        "/wp-content/themes/qs-starter-child/build/css/main-style-child-rtl.css.map",
-        "/wp-content/themes/qs-starter-child/build/css/main-style-child.css.map",
-        "/wp-content/themes/qs-starter-child/build/css/responsive-child.css.map",
-        "/wp-content/themes/qs-starter-child/build/js/scripts-child.js",
-        "/wp-content/themes/qs-starter-child/build/js/assets.min.js"
+        "/wp-content/themes/qs-starter/build/js/assets.min.js"
 ```
 
 <h3>Default gitignore</h3>
