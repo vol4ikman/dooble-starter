@@ -191,3 +191,15 @@ function convert_gregorian_date_to_jewesh( $date ) {
         return $jewish_date_utf;
     }
 }  
+/**
+ * print_svg - Print SVG 
+ * @param  string $path svg url
+ * @return string svg image
+ */
+function print_svg($path){
+	try{
+		return file_get_contents($path);
+	} catch (\Exception $e) {
+		return '';
+	}
+}
