@@ -47,4 +47,3 @@ add_action( 'wp_enqueue_scripts', 'qs_theme_scripts' );
 add_filter( 'wp_mail_content_type','qsemail_set_content_type' );
 
 add_filter( 'wpcf7_validate_tel*', 'custom_tel_confirmation_validation_filter', 20, 2 );
-add_filter( 'wpcf7_validate_tel', 'custom_tel_confirmation_validation_filter', 20, 2 );
