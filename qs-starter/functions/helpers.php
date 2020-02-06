@@ -203,3 +203,19 @@ function print_svg($path){
 		return '';
 	}
 }
+
+/**
+ * this function add validation to cf7 submiting form to all "tel" tags
+ * @param  object $result
+ * @param  object $tag
+ */
+function custom_tel_confirmation_validation_filter( $result, $tag ) {
+    $tel = isset( $_POST[$tag->name] ) ? trim( $_POST[$tag->name] ) : '';
+    $re = '/^[\+]?[(]?[0-9]{2,3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{4,6}$/';
+
+    if (!preg_match($re, $tel, $matches) || strlen( $tel ) > 10) {
+        $result->invalidate($tag, "Please enter a valid phone number" );
+    }
+
+    return $result;
+}
