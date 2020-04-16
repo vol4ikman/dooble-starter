@@ -6,8 +6,8 @@ add_action( 'after_setup_theme' , 'qstheme_textdomain' );
 add_filter( 'body_class' , 'add_body_class' );
 
 // Rest Api
-add_action( 'rest_api_init', 'disabled_rest_api_init' );
-add_action( 'rest_authentication_errors', 'disabled_rest_api', 0 );
+//add_action( 'rest_api_init', 'disabled_rest_api_init' );
+//add_action( 'rest_authentication_errors', 'disabled_rest_api', 0 );
 
 add_action('acf/init', 'google_api_acf_init');
 add_action('wp_head', 'qs_add_header_scripts');
