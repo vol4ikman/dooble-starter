@@ -225,7 +225,7 @@ function custom_tel_confirmation_validation_filter( $result, $tag ) {
  * @return object WP_Error $result 
  */
 function disabled_rest_api( $result ) {
-	return new WP_Error( 'rest_is_disable', 'REST API is disabled.', array( 'status' => 401 ) )
+	return new WP_Error( 'rest_is_disable', 'REST API is disabled.', array( 'status' => 401 ) );
 }
 /**
  * disable rest api by before init rest - invoke by hook - rest_api_init
