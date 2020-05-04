@@ -21,7 +21,7 @@ get_template_part( 'functions/classes/class.base-module-helper' );
 get_template_part( 'functions/modules/init' );
 
 // Plugins
-get_template_part('admin/plugins/user-switching/user-switching');
+//get_template_part('admin/plugins/user-switching/user-switching');
 
 if ( class_exists( 'WooCommerce' ) ) {
     get_template_part( 'functions/woocommerce' );
