@@ -4,7 +4,7 @@
 // npm install gulp -g
 // npm install gulp
 // npm install gulpjs/gulp-cli -g
-// npm install gulp-uglify gulp-rename gulp-clean-css gulp-autoprefixer gulp-concat gulp-rtlcss gulp-notify
+// npm install gulp-uglify gulp-rename gulp-clean-css gulp-postcss autoprefixer gulp-concat gulp-rtlcss gulp-notify
 
 const gulp                  = require("gulp");
 const { series, src, dest } = require('gulp');
@@ -12,7 +12,8 @@ const { series, src, dest } = require('gulp');
 const uglify                = require("gulp-uglify");
 const rename                = require("gulp-rename");
 const cleanCSS              = require("gulp-clean-css");
-const autoprefixer          = require("gulp-autoprefixer");
+const postcss 				= require('gulp-postcss');
+const autoprefixer          = require("autoprefixer");
 const concat                = require("gulp-concat");
 const gulp_rtlcss           = require("gulp-rtlcss");
 const notify                = require("gulp-notify");
@@ -33,7 +34,7 @@ if( framework == 'foundation' ) {
     JS Libraries
     1. https://dimsemenov.com/plugins/magnific-popup/
     2. https://idangero.us/swiper/
-    3. http://grsmto.github.io/simplebar/  
+    3. http://grsmto.github.io/simplebar/
     4. http://malsup.com/jquery/block/#overview
 ****************************************************************/
 var source_scripts = [
@@ -73,10 +74,11 @@ function styles() {
         .pipe(gulp.dest('./build/css/'))                   // move it to build/css/ directory
         .pipe(rename('assets.min.css'))                    // rename it
         .pipe(cleanCSS())                                  // minify css
-        .pipe(autoprefixer({
-            overrideBrowserslist: ["defaults"],
-            cascade: false
-        }))
+        // .pipe(autoprefixer({
+        //     overrideBrowserslist: ["defaults"],
+        //     cascade: false
+        // }))
+        .pipe(postcss([autoprefixer({browsers: ['last 2 versions', 'iOS 8']})]))
         .pipe(gulp.dest('./build/css/'))                    // move it again to build/clean/ directory
         .pipe(notify("Styles compliled + minified"));       // notify message
 }

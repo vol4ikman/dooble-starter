@@ -1,7 +1,14 @@
 <?php
-	/* Template Name: Homepage Template */
-get_header(); ?>
+/**
+ * Template Name: Homepage Template
+ *
+ * @package WordPress
+ */
+
+get_header();
+?>
 
 
 
-<?php get_footer(); ?>
+<?php
+get_footer();

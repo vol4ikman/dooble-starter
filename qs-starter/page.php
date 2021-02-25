@@ -1,9 +1,21 @@
-<?php get_header(); ?>
+<?php
+/**
+ * Default page template
+ *
+ * @package WordPress
+ */
 
-    <?php while( have_posts() ) : the_post(); ?>
+get_header();
+?>
 
-        <?php the_content(); ?>
+	<?php
+	while ( have_posts() ) :
+		the_post();
+		?>
 
-    <?php endwhile; ?>
+		<?php the_content(); ?>
 
-<?php get_footer(); ?>
+	<?php endwhile; ?>
+
+<?php
+get_footer();
