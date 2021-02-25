@@ -1,1 +1,11 @@
 //compileCompressed: ../../build/css/a11y.css
+
+a,
+button,
+input,
+textarea,
+select {
+	&:focus {
+		outline: 2px solid black;
+	}
+}
