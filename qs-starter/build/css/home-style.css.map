@@ -1,0 +1,9 @@
+{
+	"version": 3,
+	"file": "home-style.css",
+	"sources": [
+		"../../assets/css/home.scss"
+	],
+	"names": [],
+	"mappings": ""
+}

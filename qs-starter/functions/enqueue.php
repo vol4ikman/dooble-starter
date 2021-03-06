@@ -14,6 +14,11 @@ function qs_theme_styles() {
 		wp_enqueue_style( 'assets' );
 		wp_register_style( 'main-style', CSS_INC . 'main-style.css', array(), THEME_VER, 'all' );
 		wp_enqueue_style( 'main-style' );
+		// Only homepage styles.
+		if ( is_page_template( 'view/tpl-home.php' ) ) {
+			wp_register_style( 'home-style', CSS_INC . 'home-style.css', array(), THEME_VER, 'all' );
+			wp_enqueue_style( 'home-style' );
+		}
 		wp_register_style( 'responsive', CSS_INC . 'responsive.css', array(), THEME_VER, 'all' );
 		wp_enqueue_style( 'responsive' );
 		// Accessibility style.
