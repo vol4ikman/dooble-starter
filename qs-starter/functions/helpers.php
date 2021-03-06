@@ -183,7 +183,7 @@ isPartUppercase();
  */
 function remove_vc_shortcodes_from_content( $excerpt ) {
 	$excerpt = preg_replace( '/\[\/?vc_.*?\]/', '', $excerpt );
-	echo $excerpt;
+	echo $excerpt; //phpcs:ignore.
 }
 /**
  * Locate function definitio
@@ -241,27 +241,13 @@ function convert_gregorian_date_to_jewesh( $date ) {
 	}
 }
 /**
- * Print SVG
- *
- * @param  string $path svg url.
- * @return string svg image
- */
-function print_svg( $path ) {
-	try {
-		return file_get_contents( $path );
-	} catch ( \Exception $e ) {
-		return '';
-	}
-}
-
-/**
  * Function add validation to cf7 submiting form to all "tel" tags
  *
  * @param  object $result results.
  * @param  object $tag tag.
  */
 function custom_tel_confirmation_validation_filter( $result, $tag ) {
-	$tel = isset( $_POST[ $tag->name ] ) ? trim( $_POST[ $tag->name ] ) : '';
+	$tel = isset( $_POST[ $tag->name ] ) ? trim( $_POST[ $tag->name ] ) : ''; //phpcs:ignore.
 	$re  = '/^[\+]?[(]?[0-9]{2,3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{4,6}$/';
 
 	if ( ! preg_match( $re, $tel, $matches ) || strlen( $tel ) > 10 ) {
@@ -284,4 +270,39 @@ function disabled_rest_api( $result ) {
  */
 function disabled_rest_api_init() {
 	die( 'REST API is disabled.' );
+}
+
+/**
+ * Print SVG - print_svg
+ *
+ * @param  mixed (string|int) $path svg path or attahment id.
+ * @return string svg image
+ */
+function print_svg( $path ) {
+	if ( ! empty( $path ) ) {
+		if ( ! defined( 'THEMEPATH' ) ) {
+			define( 'THEMEPATH', get_template_directory() );
+		}
+		if ( ! defined( 'THEME' ) ) {
+			define( 'THEME', get_template_directory_uri() );
+		}
+		try {
+			if ( is_numeric( $path ) ) {
+				$path = get_attached_file( $path );
+			} else {
+				if ( false !== strpos( $path, 'http' ) ) {
+					if ( false !== strpos( $path, THEME ) ) {
+						$path = str_replace( THEME, THEMEPATH, $path );
+					} else {
+						if ( false !== strpos( $path, get_site_url() ) ) {
+							$path = str_replace( get_site_url(), str_replace( '/wp-content/themes/' . get_stylesheet(), '', THEMEPATH ), $path );
+						}
+					}
+				}
+			}
+			return file_get_contents( $path ); // phpcs:ignore.
+		} catch ( \Exception $e ) {
+			return '';
+		}
+	}
 }
