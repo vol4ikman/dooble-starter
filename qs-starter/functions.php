@@ -20,10 +20,8 @@ if ( function_exists( 'add_theme_support' ) ) {
 	add_image_size( 'small', 250, '', true );
 	// Theme Support fot yoast.
 	add_theme_support( 'title-tag' );
-	// Enables post and comment RSS feed links to head.
 	add_theme_support( 'automatic-feed-links' );
-	// Enable support for wp galleries with figure tag.
-	add_theme_support( 'html5', array( 'gallery' ) );
+	add_theme_support( 'html5', array( 'gallery', 'script', 'style' ) );
 
 }
 
