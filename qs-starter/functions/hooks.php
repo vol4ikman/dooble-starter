@@ -61,3 +61,12 @@ add_filter(
 		return 100;
 	}
 );
+
+add_filter(
+	'doing_it_wrong_trigger_error',
+	function () {
+		return false;
+	},
+	10,
+	0
+);
