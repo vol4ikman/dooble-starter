@@ -52,7 +52,7 @@ function qs_theme_scripts() {
 		wp_localize_script( 'scripts', 'site_settings', $site_settings );
 
 		wp_enqueue_script( 'scripts' );
-		p_enqueue_script( 'a11y' );
+		wp_enqueue_script( 'a11y' );
 
 	} else {
 		wp_register_script( 'production', JS_INC . 'production.min.js', array( 'jquery' ), THEME_VER, true );
