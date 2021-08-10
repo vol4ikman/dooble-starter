@@ -1,0 +1,32 @@
+{
+  "name": "qs-starter-gulp",
+  "version": "1.0.0",
+  "description": "<h3>Requirements</h3>",
+  "main": "index.js",
+  "dependencies": {
+    "autoprefixer": "^10.3.1",
+    "browserslist": "^4.16.7",
+    "gulp": "^4.0.2",
+    "gulp-clean-css": "^4.3.0",
+    "gulp-concat": "^2.6.1",
+    "gulp-notify": "^4.0.0",
+    "gulp-rename": "^2.0.0",
+    "gulp-postcss": "^9.0.0",
+    "gulp-rtlcss": "^1.4.2",
+    "gulp-uglify": "^3.0.2"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vol4ikman/qs-starter-gulp.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/vol4ikman/qs-starter-gulp/issues"
+  },
+  "homepage": "https://github.com/vol4ikman/qs-starter-gulp#readme"
+}
