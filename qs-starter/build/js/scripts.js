@@ -1,3 +1,5 @@
+$dev = true;
+
 jQuery(document).ready(function(){
     
     // accessible contact form 7 focus validation
@@ -18,3 +20,9 @@ jQuery(document).ready(function(){
 	});
     
 });
+
+function get_log( data ) {
+	if( $dev ) {
+		console.log( data );
+	}
+}
