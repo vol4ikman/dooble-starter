@@ -5,6 +5,8 @@
  * @package WordPress
  */
 
+add_filter('doing_it_wrong_trigger_error', function () {return false;}, 10, 0);
+
 get_template_part( 'functions/theme-dependencies' );
 
 if ( ! isset( $content_width ) ) {
