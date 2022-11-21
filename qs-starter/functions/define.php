@@ -5,7 +5,7 @@
  * @package WordPress
  */
 
-define( 'THEME_VER', 1.0 );
+define( 'THEME_VER', 11.2022 );
 define( 'ENV', 'dev' );
 
 if ( ! defined( 'THEME' ) ) {
