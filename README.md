@@ -1,4 +1,4 @@
-# QS Starter Theme v.1.1
+# Dooble Starter WordPress Theme v.2.0
 
 <h3>Requirements</h3>
 
