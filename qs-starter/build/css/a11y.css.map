@@ -1,9 +1,0 @@
-{
-	"version": 3,
-	"file": "a11y.css",
-	"sources": [
-		"../../assets/css/a11y.scss"
-	],
-	"names": [],
-	"mappings": "AAEA,AAKC,CALA,AAKC,MAAM,CAJR,MAAM,AAIJ,MAAM,CAHR,KAAK,AAGH,MAAM,CAFR,QAAQ,AAEN,MAAM,CADR,MAAM,AACJ,MAAM,AAAC,CACP,OAAO,CAAE,eAAe,CACxB"
-}
