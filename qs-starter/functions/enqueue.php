@@ -36,6 +36,7 @@ function qs_theme_scripts() {
 		'home_url'  => get_home_url(),
 		'theme_url' => THEME,
 		'ajaxurl'   => admin_url( 'admin-ajax.php' ),
+		'dev'       => 'dooble',
 	);
 	wp_localize_script( 'scripts', 'site_settings', $site_settings );
 
