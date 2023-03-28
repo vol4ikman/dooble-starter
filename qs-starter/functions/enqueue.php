@@ -35,6 +35,7 @@ function qs_theme_scripts() {
 	$site_settings = array(
 		'home_url'  => get_home_url(),
 		'theme_url' => THEME,
+		'ajaxurl'   => admin_url( 'admin-ajax.php' ),
 	);
 	wp_localize_script( 'scripts', 'site_settings', $site_settings );
 
