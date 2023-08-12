@@ -24,11 +24,19 @@ function qs_theme_styles() {
 function qs_theme_scripts() {
 	// Move jquery to footer.
 	wp_deregister_script( 'jquery' );
-	wp_register_script( 'jquery', includes_url( 'js/jquery/jquery.js' ), array(), THEME_VER, true );
+	wp_register_script( 'jquery', includes_url( 'js/jquery/jquery.js' ), array(), THEME_VER, array(
+        'in_footer' => true,
+    ) );
 	wp_enqueue_script( 'jquery' );
 
-	wp_register_script( 'scripts', THEME . '/assets/js/scripts.js', array( 'jquery' ), THEME_VER, true );
-	wp_register_script( 'a11y', THEME . '/assets/js/a11y.js', array( 'jquery' ), THEME_VER, true );
+	wp_register_script( 'scripts', THEME . '/assets/js/scripts.js', array( 'jquery' ), THEME_VER, array(
+        'in_footer' => true,
+        'strategy'  => 'defer',
+    ) );
+	wp_register_script( 'a11y', THEME . '/assets/js/a11y.js', array( 'jquery' ), THEME_VER, array(
+        'in_footer' => true,
+        'strategy'  => 'defer',
+    ) );
 
 	wp_enqueue_script( 'assets' );
 
