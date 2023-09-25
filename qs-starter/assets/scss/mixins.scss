@@ -1,3 +1,12 @@
+@mixin css3-prefix($property, $value) {
+  -webkit-#{$property}: #{$value};
+   -khtml-#{$property}: #{$value};
+     -moz-#{$property}: #{$value};
+      -ms-#{$property}: #{$value};
+       -o-#{$property}: #{$value};
+          #{$property}: #{$value};
+}
+
 @mixin trans($ms) {
 	-webkit-transition: all $ms ease;
 	-moz-transition: all $ms ease;
@@ -20,4 +29,8 @@
 	display: -moz-inline-flex;
 	display: -ms-inline-flexbox;
 	display: inline-flex;
+}
+
+@mixin border-radius($radius: 5px) {
+    @include css3-prefix('border-radius', $radius);
 }
