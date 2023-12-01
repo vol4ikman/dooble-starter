@@ -56,6 +56,11 @@ function qs_theme_scripts() {
     ) );
 	wp_localize_script( 'ajax_custom_script', 'ajaxurl', admin_url( 'admin-ajax.php' ) );
 	wp_enqueue_script( 'ajax_custom_script' );
+
+	wp_dequeue_style( 'wp-block-library' ); // REMOVE block library styles.
+	wp_dequeue_style( 'wp-block-library-theme' ); // REMOVE theme library.
+	wp_dequeue_style( 'wc-block-style' ); // REMOVE WOOCOMMERCE BLOCK CSS.
+	wp_dequeue_style( 'global-styles' ); // REMOVE gutenberg global styles.
 }
 /**
  * Load custom admin styles
