@@ -38,6 +38,11 @@ remove_action( 'wp_head', 'print_emoji_detection_script', 7 );
 remove_action( 'admin_print_scripts', 'print_emoji_detection_script' );
 remove_action( 'wp_print_styles', 'print_emoji_styles' );
 remove_action( 'admin_print_styles', 'print_emoji_styles' );
+remove_action( 'wp_head', 'rest_output_link_wp_head', 10 );
+remove_action( 'wp_head', 'wp_oembed_add_discovery_links', 10 );
+remove_action( 'wp_head', 'wp_oembed_add_host_js' );
+remove_action('rest_api_init', 'wp_oembed_register_route');
+remove_filter('oembed_dataparse', 'wp_filter_oembed_result', 10);
 // Add Filters.
 add_filter( 'widget_text', 'do_shortcode' ); // Allow shortcodes in Dynamic Sidebar.
 add_filter( 'widget_text', 'shortcode_unautop' ); // Remove <p> tags in Dynamic Sidebars (better!).
@@ -70,3 +75,64 @@ add_filter(
 	10,
 	0
 );
+
+function dooble_wpversion_remove() {
+    return '';
+}
+add_filter('the_generator', 'dooble_wpversion_remove');
+
+function dooble_no_wordpress_errors(){
+  return 'הנתונים שגויים, אנא נסו שנית';
+}
+add_filter( 'login_errors', 'dooble_no_wordpress_errors' );
+
+function disable_emojis() {
+    remove_action( 'wp_head', 'print_emoji_detection_script', 7 );
+    remove_action( 'admin_print_scripts', 'print_emoji_detection_script' );
+    remove_action( 'wp_print_styles', 'print_emoji_styles' );
+    remove_action( 'admin_print_styles', 'print_emoji_styles' );    
+    remove_filter( 'the_content_feed', 'wp_staticize_emoji' );
+    remove_filter( 'comment_text_rss', 'wp_staticize_emoji' );  
+    remove_filter( 'wp_mail', 'wp_staticize_emoji_for_email' );
+    
+    // Remove from TinyMCE.
+    add_filter( 'tiny_mce_plugins', 'disable_emojis_tinymce' );
+}
+add_action( 'init', 'disable_emojis' );
+
+/**
+ * Filter out the tinymce emoji plugin.
+ */
+function disable_emojis_tinymce( $plugins ) {
+    if ( is_array( $plugins ) ) {
+        return array_diff( $plugins, array( 'wpemoji' ) );
+    } else {
+        return array();
+    }
+}
+
+/**
+ * Disable RSS Feed.
+ */
+function dooble_disable_feed() {
+	wp_die( __( 'No feed available, please visit the <a href=""'. esc_url( home_url( '/' ) ) .'"">homepage</a>!' ) );
+}
+
+add_action('do_feed', 'dooble_disable_feed', 1);
+add_action('do_feed_rdf', 'dooble_disable_feed', 1);
+add_action('do_feed_rss', 'dooble_disable_feed', 1);
+add_action('do_feed_rss2', 'dooble_disable_feed', 1);
+add_action('do_feed_atom', 'dooble_disable_feed', 1);
+add_action('do_feed_rss2_comments', 'dooble_disable_feed', 1);
+add_action('do_feed_atom_comments', 'dooble_disable_feed', 1);
+
+add_action('template_redirect', 'disableAuthorUrl');
+/**
+ * Disable Author page.
+ */
+function disableAuthorUrl(){
+    if (is_author()) {
+       wp_redirect(home_url());
+       exit();
+    }
+}
