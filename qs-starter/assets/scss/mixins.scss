@@ -47,6 +47,13 @@
   }
 }
 
+/*
+usage:
+@include tablet {
+    font-size: 18px;
+  }
+*/
+
 @mixin mobile {
   @media (max-width: 640px) {
     @content;
